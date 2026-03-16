@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+
+  # ── FastAPI backend ──────────────────────────────────────
+  api:
+    build: .
+    container_name: pitwall_api
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - pitwall_data:/app/data
+      - pitwall_models:/app/models
+    environment:
+      - PYTHONPATH=/app
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - F1_DB_URL=sqlite:////app/data/f1_platform.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Streamlit dashboard ──────────────────────────────────
+  dashboard:
+    build: .
+    container_name: pitwall_dashboard
+    command: streamlit run dashboard/app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+      - pitwall_data:/app/data
+      - pitwall_models:/app/models
+    environment:
+      - PYTHONPATH=/app
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # ── Scheduler (runs background jobs) ────────────────────
+  scheduler:
+    build: .
+    container_name: pitwall_scheduler
+    command: python ingestion/run_ingestion.py --schedule
+    volumes:
+      - .:/app
+      - pitwall_data:/app/data
+      - pitwall_models:/app/models
+    environment:
+      - PYTHONPATH=/app
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pitwall_data:
+  pitwall_models:

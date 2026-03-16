@@ -1,0 +1,171 @@
+name: PitWall AI — CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run after each F1 race weekend — Sunday 20:00 UTC
+    - cron: '0 20 * * 0'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to run'
+        required: true
+        default: 'sync'
+        type: choice
+        options:
+          - sync
+          - retrain
+          - features
+          - full_update
+
+jobs:
+
+  # ── Tests ────────────────────────────────────────────────
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install fastapi uvicorn pytest httpx
+
+      - name: Setup platform
+        run: python setup.py
+
+      - name: Test API health
+        run: |
+          python -c "
+          import sys
+          sys.path.insert(0, '.')
+          from api.main import app
+          from fastapi.testclient import TestClient
+          client = TestClient(app)
+          r = client.get('/health')
+          assert r.status_code == 200
+          data = r.json()
+          assert 'status' in data
+          print('✅ API health check passed')
+          print(f'   Status: {data[\"status\"]}')
+          "
+
+      - name: Test prediction endpoint
+        run: |
+          python -c "
+          import sys
+          sys.path.insert(0, '.')
+          from api.main import app
+          from fastapi.testclient import TestClient
+          client = TestClient(app)
+          r = client.get('/api/prediction/Japanese Grand Prix?weather=Dry')
+          assert r.status_code == 200
+          data = r.json()
+          assert 'winner' in data
+          assert 'top_10' in data
+          print('✅ Prediction endpoint passed')
+          print(f'   Predicted winner: {data[\"winner\"][\"driver\"]}')
+          "
+
+      - name: Test model metrics
+        run: |
+          python -c "
+          import sys, json
+          sys.path.insert(0, '.')
+          from api.main import app
+          from fastapi.testclient import TestClient
+          client = TestClient(app)
+          r = client.get('/api/model/metrics')
+          assert r.status_code == 200
+          data = r.json()
+          metrics = data['metrics']
+          auc = metrics.get('podium_auc', 0)
+          assert auc > 0.90, f'AUC too low: {auc}'
+          print(f'✅ Model metrics: AUC={auc:.4f}')
+          "
+
+  # ── Auto-sync after race weekends ────────────────────────
+  race_sync:
+    name: Post-Race Data Sync
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'schedule' || github.event.inputs.action == 'sync' || github.event.inputs.action == 'full_update'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Setup database
+        run: python ingestion/run_ingestion.py --setup
+
+      - name: Sync race results from API
+        run: python ingestion/run_ingestion.py --sync-api
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Rebuild feature store
+        run: python ingestion/run_ingestion.py --features
+
+      - name: Retrain models
+        run: python src/train_model.py
+
+      - name: Check model quality
+        run: |
+          python -c "
+          import json
+          with open('models/model_meta.json') as f:
+              meta = json.load(f)
+          auc = meta['metrics']['podium_auc']
+          mae = meta['metrics']['position_mae']
+          print(f'Podium AUC: {auc:.4f}')
+          print(f'Position MAE: {mae:.4f}')
+          assert auc > 0.92, f'AUC regression: {auc}'
+          print('✅ Model quality check passed')
+          "
+
+      - name: Commit updated data
+        run: |
+          git config --local user.email "pitwall-ai@github.com"
+          git config --local user.name "PitWall AI Bot"
+          git add data/cleaned_race_data.csv data/enriched_features.csv models/model_meta.json
+          git diff --staged --quiet || git commit -m "🏁 Auto-update: race data + model retrain $(date +'%Y-%m-%d')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ── Deploy to Render/Railway/Fly.io ─────────────────────
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [test, race_sync]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy notification
+        run: |
+          echo "✅ PitWall AI deployment triggered"
+          echo "   Branch: ${{ github.ref }}"
+          echo "   Commit: ${{ github.sha }}"
+          echo "   Deploy to your preferred platform:"
+          echo "   - Render:  Connect GitHub repo → auto-deploys"
+          echo "   - Railway: railway up"
+          echo "   - Fly.io:  fly deploy"
+          echo "   - HuggingFace Spaces: git push hf main"

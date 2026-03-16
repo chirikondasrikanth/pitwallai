@@ -1,0 +1,1005 @@
+season,round,circuit,location,driver,team,qualifying_position,pole_position,finish_position,weather,tire_strategy,pit_stops,incidents,penalties,points,podium,win
+2024.0,1.0,Bahrain Grand Prix,Sakhir,George Russell,Mercedes,5.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Lewis Hamilton,Mercedes,7.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Alexander Albon,Williams,17.0,0,3.0,Dry,3-Stop,3.0,0.0,1.0,15.0,1,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Sergio Perez,Red Bull,2.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Max Verstappen,Red Bull,1.0,1,5.0,Dry,3-Stop,3.0,0.0,0.0,10.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Lando Norris,Mclaren,4.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Charles Leclerc,Ferrari,8.0,0,7.0,Dry,1-Stop,1.0,1.0,0.0,6.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Carlos Sainz,Ferrari,6.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Lance Stroll,Aston Martin,14.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Oscar Piastri,Mclaren,3.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Pierre Gasly,Alpine,16.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Nico Hulkenberg,Haas,13.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Logan Sargeant,Williams,20.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Yuki Tsunoda,Racing Bulls,11.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Valtteri Bottas,Kick Sauber,10.0,0,15.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Kevin Magnussen,Haas,12.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Fernando Alonso,Aston Martin,9.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Zhou Guanyu,Kick Sauber,15.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Esteban Ocon,Alpine,18.0,0,19.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,1.0,Bahrain Grand Prix,Sakhir,Daniel Ricciardo,Racing Bulls,19.0,0,20.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Oscar Piastri,Mclaren,7.0,0,1.0,Wet,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Fernando Alonso,Aston Martin,9.0,0,2.0,Wet,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Max Verstappen,Red Bull,1.0,1,3.0,Wet,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Charles Leclerc,Ferrari,4.0,0,4.0,Wet,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Sergio Perez,Red Bull,8.0,0,5.0,Wet,3-Stop,3.0,0.0,0.0,10.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,George Russell,Mercedes,5.0,0,6.0,Wet,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lando Norris,Mclaren,6.0,0,7.0,Wet,3-Stop,3.0,0.0,0.0,6.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Carlos Sainz,Ferrari,2.0,0,8.0,Wet,1-Stop,1.0,0.0,0.0,4.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Nico Hulkenberg,Haas,18.0,0,9.0,Wet,3-Stop,3.0,1.0,0.0,2.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Alexander Albon,Williams,10.0,0,10.0,Wet,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Logan Sargeant,Williams,19.0,0,11.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lewis Hamilton,Mercedes,3.0,0,12.0,Wet,2-Stop,2.0,1.0,1.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Yuki Tsunoda,Racing Bulls,12.0,0,13.0,Wet,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Pierre Gasly,Alpine,17.0,0,14.0,Wet,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Daniel Ricciardo,Racing Bulls,14.0,0,15.0,Wet,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Esteban Ocon,Alpine,11.0,0,16.0,Wet,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Kevin Magnussen,Haas,20.0,0,17.0,Wet,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Valtteri Bottas,Kick Sauber,15.0,0,18.0,Wet,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Zhou Guanyu,Kick Sauber,16.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lance Stroll,Aston Martin,13.0,0,20.0,Wet,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Max Verstappen,Red Bull,3.0,0,1.0,Dry,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,3.0,Australian Grand Prix,Melbourne,George Russell,Mercedes,9.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Lewis Hamilton,Mercedes,1.0,1,3.0,Dry,1-Stop,1.0,0.0,0.0,15.0,1,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Charles Leclerc,Ferrari,2.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Carlos Sainz,Ferrari,5.0,0,5.0,Dry,1-Stop,1.0,1.0,0.0,10.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Sergio Perez,Red Bull,6.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Fernando Alonso,Aston Martin,8.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Alexander Albon,Williams,13.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Lando Norris,Mclaren,4.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Oscar Piastri,Mclaren,7.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Daniel Ricciardo,Racing Bulls,14.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Pierre Gasly,Alpine,20.0,0,12.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Yuki Tsunoda,Racing Bulls,16.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Zhou Guanyu,Kick Sauber,10.0,0,14.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Nico Hulkenberg,Haas,17.0,0,15.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Esteban Ocon,Alpine,15.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Logan Sargeant,Williams,18.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Lance Stroll,Aston Martin,19.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Kevin Magnussen,Haas,12.0,0,19.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,3.0,Australian Grand Prix,Melbourne,Valtteri Bottas,Kick Sauber,11.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Max Verstappen,Red Bull,1.0,1,1.0,Mixed,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,4.0,Japanese Grand Prix,Suzuka,Oscar Piastri,Mclaren,5.0,0,2.0,Mixed,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Charles Leclerc,Ferrari,6.0,0,3.0,Mixed,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Valtteri Bottas,Kick Sauber,17.0,0,4.0,Mixed,3-Stop,3.0,0.0,1.0,12.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Sergio Perez,Red Bull,3.0,0,5.0,Mixed,1-Stop,1.0,1.0,0.0,10.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Carlos Sainz,Ferrari,7.0,0,6.0,Mixed,3-Stop,3.0,0.0,1.0,8.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Fernando Alonso,Aston Martin,8.0,0,7.0,Mixed,1-Stop,1.0,0.0,1.0,6.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Lando Norris,Mclaren,2.0,0,8.0,Mixed,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,George Russell,Mercedes,10.0,0,9.0,Mixed,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Yuki Tsunoda,Racing Bulls,18.0,0,10.0,Mixed,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Lewis Hamilton,Mercedes,4.0,0,11.0,Mixed,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Pierre Gasly,Alpine,14.0,0,12.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Esteban Ocon,Alpine,13.0,0,13.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Zhou Guanyu,Kick Sauber,11.0,0,14.0,Mixed,1-Stop,1.0,1.0,1.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Lance Stroll,Aston Martin,9.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Nico Hulkenberg,Haas,16.0,0,16.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Daniel Ricciardo,Racing Bulls,12.0,0,17.0,Mixed,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Kevin Magnussen,Haas,20.0,0,18.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Alexander Albon,Williams,15.0,0,19.0,Mixed,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,4.0,Japanese Grand Prix,Suzuka,Logan Sargeant,Williams,19.0,0,20.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Sergio Perez,Red Bull,3.0,0,1.0,Mixed,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,5.0,Chinese Grand Prix,Shanghai,Lewis Hamilton,Mercedes,7.0,0,2.0,Mixed,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,George Russell,Mercedes,8.0,0,3.0,Mixed,1-Stop,1.0,0.0,0.0,15.0,1,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Yuki Tsunoda,Racing Bulls,20.0,0,4.0,Mixed,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Daniel Ricciardo,Racing Bulls,13.0,0,5.0,Mixed,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Lando Norris,Mclaren,1.0,1,6.0,Mixed,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Carlos Sainz,Ferrari,4.0,0,7.0,Mixed,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Oscar Piastri,Mclaren,5.0,0,8.0,Mixed,3-Stop,3.0,1.0,0.0,4.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Charles Leclerc,Ferrari,6.0,0,9.0,Mixed,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Nico Hulkenberg,Haas,10.0,0,10.0,Mixed,1-Stop,1.0,0.0,0.0,1.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Valtteri Bottas,Kick Sauber,16.0,0,11.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Fernando Alonso,Aston Martin,12.0,0,12.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Max Verstappen,Red Bull,2.0,0,13.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Esteban Ocon,Alpine,11.0,0,14.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Alexander Albon,Williams,9.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Lance Stroll,Aston Martin,17.0,0,16.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Kevin Magnussen,Haas,15.0,0,17.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Zhou Guanyu,Kick Sauber,19.0,0,18.0,Mixed,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Pierre Gasly,Alpine,18.0,0,19.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,5.0,Chinese Grand Prix,Shanghai,Logan Sargeant,Williams,14.0,0,20.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Carlos Sainz,Ferrari,3.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,6.0,Miami Grand Prix,Miami,Charles Leclerc,Ferrari,7.0,0,2.0,Dry,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,6.0,Miami Grand Prix,Miami,Oscar Piastri,Mclaren,4.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,6.0,Miami Grand Prix,Miami,Max Verstappen,Red Bull,1.0,1,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Sergio Perez,Red Bull,8.0,0,5.0,Dry,2-Stop,2.0,1.0,0.0,10.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Lewis Hamilton,Mercedes,2.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Lando Norris,Mclaren,5.0,0,7.0,Dry,3-Stop,3.0,0.0,0.0,6.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Fernando Alonso,Aston Martin,6.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Yuki Tsunoda,Racing Bulls,13.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,George Russell,Mercedes,9.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Daniel Ricciardo,Racing Bulls,18.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Logan Sargeant,Williams,16.0,0,12.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Lance Stroll,Aston Martin,11.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Valtteri Bottas,Kick Sauber,19.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Pierre Gasly,Alpine,10.0,0,15.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Kevin Magnussen,Haas,20.0,0,16.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Alexander Albon,Williams,12.0,0,17.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Esteban Ocon,Alpine,17.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Nico Hulkenberg,Haas,14.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,6.0,Miami Grand Prix,Miami,Zhou Guanyu,Kick Sauber,15.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Max Verstappen,Red Bull,2.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Charles Leclerc,Ferrari,1.0,1,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,George Russell,Mercedes,9.0,0,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Sergio Perez,Red Bull,6.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Fernando Alonso,Aston Martin,4.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Lewis Hamilton,Mercedes,3.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Lando Norris,Mclaren,5.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Pierre Gasly,Alpine,12.0,0,8.0,Dry,1-Stop,1.0,0.0,0.0,4.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Carlos Sainz,Ferrari,7.0,0,9.0,Dry,3-Stop,3.0,0.0,0.0,2.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Oscar Piastri,Mclaren,11.0,0,10.0,Dry,1-Stop,1.0,1.0,0.0,1.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Lance Stroll,Aston Martin,18.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Esteban Ocon,Alpine,10.0,0,12.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Nico Hulkenberg,Haas,15.0,0,13.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Kevin Magnussen,Haas,17.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Daniel Ricciardo,Racing Bulls,14.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Zhou Guanyu,Kick Sauber,16.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Yuki Tsunoda,Racing Bulls,8.0,0,17.0,Dry,1-Stop,1.0,1.0,1.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Alexander Albon,Williams,13.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Valtteri Bottas,Kick Sauber,20.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,7.0,Emilia Romagna Grand Prix,Imola,Logan Sargeant,Williams,19.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Max Verstappen,Red Bull,4.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,8.0,Monaco Grand Prix,Monaco,Fernando Alonso,Aston Martin,5.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Charles Leclerc,Ferrari,6.0,0,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Carlos Sainz,Ferrari,8.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,George Russell,Mercedes,10.0,0,5.0,Dry,1-Stop,1.0,0.0,0.0,10.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Lando Norris,Mclaren,3.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Lewis Hamilton,Mercedes,7.0,0,7.0,Dry,1-Stop,1.0,0.0,0.0,6.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Oscar Piastri,Mclaren,2.0,0,8.0,Dry,3-Stop,3.0,1.0,0.0,4.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Esteban Ocon,Alpine,20.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Sergio Perez,Red Bull,1.0,1,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Yuki Tsunoda,Racing Bulls,11.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Alexander Albon,Williams,15.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Lance Stroll,Aston Martin,13.0,0,13.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Kevin Magnussen,Haas,14.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Zhou Guanyu,Kick Sauber,19.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Daniel Ricciardo,Racing Bulls,9.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Pierre Gasly,Alpine,12.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Logan Sargeant,Williams,18.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Nico Hulkenberg,Haas,16.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,8.0,Monaco Grand Prix,Monaco,Valtteri Bottas,Kick Sauber,17.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Max Verstappen,Red Bull,5.0,0,1.0,Wet,3-Stop,3.0,0.0,0.0,25.0,1,1
+2024.0,9.0,Canadian Grand Prix,Montreal,Oscar Piastri,Mclaren,1.0,1,2.0,Wet,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Lewis Hamilton,Mercedes,6.0,0,3.0,Wet,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Lando Norris,Mclaren,4.0,0,4.0,Wet,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Fernando Alonso,Aston Martin,7.0,0,5.0,Wet,2-Stop,2.0,1.0,0.0,10.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Sergio Perez,Red Bull,10.0,0,6.0,Wet,1-Stop,1.0,1.0,1.0,8.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Carlos Sainz,Ferrari,8.0,0,7.0,Wet,3-Stop,3.0,0.0,1.0,6.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Daniel Ricciardo,Racing Bulls,9.0,0,8.0,Wet,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Kevin Magnussen,Haas,14.0,0,9.0,Wet,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Zhou Guanyu,Kick Sauber,17.0,0,10.0,Wet,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Yuki Tsunoda,Racing Bulls,18.0,0,11.0,Wet,3-Stop,3.0,1.0,1.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Charles Leclerc,Ferrari,2.0,0,12.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Pierre Gasly,Alpine,11.0,0,13.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Lance Stroll,Aston Martin,13.0,0,14.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,George Russell,Mercedes,3.0,0,15.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Alexander Albon,Williams,19.0,0,16.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Esteban Ocon,Alpine,15.0,0,17.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Valtteri Bottas,Kick Sauber,20.0,0,18.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Nico Hulkenberg,Haas,12.0,0,19.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,9.0,Canadian Grand Prix,Montreal,Logan Sargeant,Williams,16.0,0,20.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Sergio Perez,Red Bull,5.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,10.0,Spanish Grand Prix,Barcelona,Max Verstappen,Red Bull,2.0,0,2.0,Dry,3-Stop,3.0,1.0,1.0,18.0,1,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Lando Norris,Mclaren,9.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Carlos Sainz,Ferrari,4.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Charles Leclerc,Ferrari,3.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Lewis Hamilton,Mercedes,1.0,1,6.0,Dry,2-Stop,2.0,0.0,1.0,8.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Oscar Piastri,Mclaren,7.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Fernando Alonso,Aston Martin,8.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Yuki Tsunoda,Racing Bulls,11.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Pierre Gasly,Alpine,10.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Lance Stroll,Aston Martin,14.0,0,11.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,George Russell,Mercedes,6.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Esteban Ocon,Alpine,12.0,0,13.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Logan Sargeant,Williams,17.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Kevin Magnussen,Haas,18.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Alexander Albon,Williams,16.0,0,16.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Zhou Guanyu,Kick Sauber,15.0,0,17.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Nico Hulkenberg,Haas,19.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Daniel Ricciardo,Racing Bulls,13.0,0,19.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2024.0,10.0,Spanish Grand Prix,Barcelona,Valtteri Bottas,Kick Sauber,20.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Max Verstappen,Red Bull,2.0,0,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,11.0,Austrian Grand Prix,Spielberg,Yuki Tsunoda,Racing Bulls,14.0,0,2.0,Dry,1-Stop,1.0,1.0,0.0,18.0,1,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Oscar Piastri,Mclaren,5.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Carlos Sainz,Ferrari,7.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Charles Leclerc,Ferrari,1.0,1,5.0,Dry,3-Stop,3.0,0.0,0.0,10.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,George Russell,Mercedes,6.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Sergio Perez,Red Bull,3.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Lance Stroll,Aston Martin,9.0,0,8.0,Dry,1-Stop,1.0,0.0,0.0,4.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Lewis Hamilton,Mercedes,8.0,0,9.0,Dry,1-Stop,1.0,1.0,0.0,2.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Fernando Alonso,Aston Martin,10.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Lando Norris,Mclaren,4.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Kevin Magnussen,Haas,16.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Alexander Albon,Williams,15.0,0,13.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Esteban Ocon,Alpine,18.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Pierre Gasly,Alpine,11.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Daniel Ricciardo,Racing Bulls,17.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Logan Sargeant,Williams,12.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Valtteri Bottas,Kick Sauber,13.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Nico Hulkenberg,Haas,19.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,11.0,Austrian Grand Prix,Spielberg,Zhou Guanyu,Kick Sauber,20.0,0,20.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Lewis Hamilton,Mercedes,8.0,0,1.0,Dry,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,12.0,British Grand Prix,Silverstone,George Russell,Mercedes,2.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2024.0,12.0,British Grand Prix,Silverstone,Lando Norris,Mclaren,5.0,0,3.0,Dry,2-Stop,2.0,1.0,0.0,15.0,1,0
+2024.0,12.0,British Grand Prix,Silverstone,Max Verstappen,Red Bull,1.0,1,4.0,Dry,1-Stop,1.0,0.0,1.0,12.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Carlos Sainz,Ferrari,6.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Oscar Piastri,Mclaren,3.0,0,6.0,Dry,1-Stop,1.0,1.0,1.0,8.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Charles Leclerc,Ferrari,4.0,0,7.0,Dry,1-Stop,1.0,1.0,0.0,6.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Esteban Ocon,Alpine,18.0,0,8.0,Dry,3-Stop,3.0,0.0,0.0,4.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Yuki Tsunoda,Racing Bulls,10.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Fernando Alonso,Aston Martin,9.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Kevin Magnussen,Haas,20.0,0,11.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Sergio Perez,Red Bull,7.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Valtteri Bottas,Kick Sauber,13.0,0,13.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Pierre Gasly,Alpine,12.0,0,14.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Lance Stroll,Aston Martin,16.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Alexander Albon,Williams,17.0,0,16.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Zhou Guanyu,Kick Sauber,19.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Logan Sargeant,Williams,11.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Nico Hulkenberg,Haas,15.0,0,19.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2024.0,12.0,British Grand Prix,Silverstone,Daniel Ricciardo,Racing Bulls,14.0,0,20.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Max Verstappen,Red Bull,2.0,0,1.0,Wet,3-Stop,3.0,0.0,0.0,25.0,1,1
+2024.0,13.0,Hungarian Grand Prix,Budapest,Carlos Sainz,Ferrari,4.0,0,2.0,Wet,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Sergio Perez,Red Bull,5.0,0,3.0,Wet,2-Stop,2.0,0.0,1.0,15.0,1,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Lewis Hamilton,Mercedes,3.0,0,4.0,Wet,3-Stop,3.0,1.0,0.0,12.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Fernando Alonso,Aston Martin,8.0,0,5.0,Wet,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Charles Leclerc,Ferrari,6.0,0,6.0,Wet,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Oscar Piastri,Mclaren,7.0,0,7.0,Wet,3-Stop,3.0,0.0,0.0,6.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Alexander Albon,Williams,18.0,0,8.0,Wet,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Lando Norris,Mclaren,1.0,1,9.0,Wet,2-Stop,2.0,1.0,0.0,2.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Yuki Tsunoda,Racing Bulls,14.0,0,10.0,Wet,1-Stop,1.0,0.0,0.0,1.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,George Russell,Mercedes,9.0,0,11.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Zhou Guanyu,Kick Sauber,17.0,0,12.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Logan Sargeant,Williams,11.0,0,13.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Valtteri Bottas,Kick Sauber,13.0,0,14.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Daniel Ricciardo,Racing Bulls,15.0,0,15.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Pierre Gasly,Alpine,19.0,0,16.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Lance Stroll,Aston Martin,12.0,0,17.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Nico Hulkenberg,Haas,16.0,0,18.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Kevin Magnussen,Haas,20.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,13.0,Hungarian Grand Prix,Budapest,Esteban Ocon,Alpine,10.0,0,20.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Max Verstappen,Red Bull,1.0,1,1.0,Wet,3-Stop,3.0,0.0,0.0,25.0,1,1
+2024.0,14.0,Belgian Grand Prix,Spa,Charles Leclerc,Ferrari,3.0,0,2.0,Wet,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,14.0,Belgian Grand Prix,Spa,Fernando Alonso,Aston Martin,9.0,0,3.0,Wet,1-Stop,1.0,1.0,0.0,15.0,1,0
+2024.0,14.0,Belgian Grand Prix,Spa,George Russell,Mercedes,7.0,0,4.0,Wet,3-Stop,3.0,0.0,0.0,12.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Sergio Perez,Red Bull,2.0,0,5.0,Wet,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Lando Norris,Mclaren,5.0,0,6.0,Wet,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Alexander Albon,Williams,15.0,0,7.0,Wet,2-Stop,2.0,0.0,1.0,6.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Lance Stroll,Aston Martin,11.0,0,8.0,Wet,2-Stop,2.0,1.0,0.0,4.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Lewis Hamilton,Mercedes,6.0,0,9.0,Wet,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Carlos Sainz,Ferrari,4.0,0,10.0,Wet,2-Stop,2.0,0.0,1.0,1.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Esteban Ocon,Alpine,17.0,0,11.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Zhou Guanyu,Kick Sauber,20.0,0,12.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Nico Hulkenberg,Haas,13.0,0,13.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Oscar Piastri,Mclaren,8.0,0,14.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Pierre Gasly,Alpine,14.0,0,15.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Valtteri Bottas,Kick Sauber,19.0,0,16.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Daniel Ricciardo,Racing Bulls,10.0,0,17.0,Wet,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Kevin Magnussen,Haas,16.0,0,18.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Yuki Tsunoda,Racing Bulls,12.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,14.0,Belgian Grand Prix,Spa,Logan Sargeant,Williams,18.0,0,20.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Charles Leclerc,Ferrari,4.0,0,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Lewis Hamilton,Mercedes,3.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Max Verstappen,Red Bull,1.0,1,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,George Russell,Mercedes,8.0,0,4.0,Dry,3-Stop,3.0,0.0,0.0,12.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Oscar Piastri,Mclaren,7.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Pierre Gasly,Alpine,9.0,0,6.0,Dry,1-Stop,1.0,0.0,1.0,8.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Fernando Alonso,Aston Martin,11.0,0,7.0,Dry,1-Stop,1.0,0.0,0.0,6.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Esteban Ocon,Alpine,19.0,0,8.0,Dry,2-Stop,2.0,0.0,1.0,4.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Lance Stroll,Aston Martin,10.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Logan Sargeant,Williams,14.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Carlos Sainz,Ferrari,6.0,0,11.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Lando Norris,Mclaren,5.0,0,12.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Daniel Ricciardo,Racing Bulls,12.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Zhou Guanyu,Kick Sauber,20.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Alexander Albon,Williams,17.0,0,15.0,Dry,2-Stop,2.0,1.0,1.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Nico Hulkenberg,Haas,13.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Valtteri Bottas,Kick Sauber,15.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Sergio Perez,Red Bull,2.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Yuki Tsunoda,Racing Bulls,16.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,15.0,Dutch Grand Prix,Zandvoort,Kevin Magnussen,Haas,18.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Charles Leclerc,Ferrari,3.0,0,1.0,Wet,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,16.0,Italian Grand Prix,Monza,Max Verstappen,Red Bull,1.0,1,2.0,Wet,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,16.0,Italian Grand Prix,Monza,Lando Norris,Mclaren,2.0,0,3.0,Wet,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,16.0,Italian Grand Prix,Monza,Oscar Piastri,Mclaren,5.0,0,4.0,Wet,3-Stop,3.0,0.0,0.0,12.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Sergio Perez,Red Bull,4.0,0,5.0,Wet,1-Stop,1.0,0.0,0.0,10.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Alexander Albon,Williams,13.0,0,6.0,Wet,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Lewis Hamilton,Mercedes,6.0,0,7.0,Wet,3-Stop,3.0,0.0,0.0,6.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,George Russell,Mercedes,8.0,0,8.0,Wet,3-Stop,3.0,0.0,0.0,4.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Daniel Ricciardo,Racing Bulls,16.0,0,9.0,Wet,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Fernando Alonso,Aston Martin,9.0,0,10.0,Wet,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Kevin Magnussen,Haas,17.0,0,11.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Carlos Sainz,Ferrari,7.0,0,12.0,Wet,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Lance Stroll,Aston Martin,12.0,0,13.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Yuki Tsunoda,Racing Bulls,10.0,0,14.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Pierre Gasly,Alpine,14.0,0,15.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Nico Hulkenberg,Haas,11.0,0,16.0,Wet,1-Stop,1.0,1.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Valtteri Bottas,Kick Sauber,19.0,0,17.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Esteban Ocon,Alpine,15.0,0,18.0,Wet,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Logan Sargeant,Williams,18.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,16.0,Italian Grand Prix,Monza,Zhou Guanyu,Kick Sauber,20.0,0,20.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Sergio Perez,Red Bull,5.0,0,1.0,Dry,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Esteban Ocon,Alpine,9.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Lewis Hamilton,Mercedes,1.0,1,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,George Russell,Mercedes,10.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Daniel Ricciardo,Racing Bulls,16.0,0,5.0,Dry,2-Stop,2.0,0.0,1.0,10.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Fernando Alonso,Aston Martin,8.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Lando Norris,Mclaren,2.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Max Verstappen,Red Bull,3.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Carlos Sainz,Ferrari,7.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Oscar Piastri,Mclaren,4.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Charles Leclerc,Ferrari,6.0,0,11.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Pierre Gasly,Alpine,11.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Yuki Tsunoda,Racing Bulls,15.0,0,13.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Lance Stroll,Aston Martin,14.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Kevin Magnussen,Haas,12.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Zhou Guanyu,Kick Sauber,19.0,0,16.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Valtteri Bottas,Kick Sauber,20.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Logan Sargeant,Williams,18.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Nico Hulkenberg,Haas,17.0,0,19.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,17.0,Azerbaijan Grand Prix,Baku,Alexander Albon,Williams,13.0,0,20.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Lando Norris,Mclaren,1.0,1,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,18.0,Singapore Grand Prix,Singapore,Max Verstappen,Red Bull,4.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2024.0,18.0,Singapore Grand Prix,Singapore,George Russell,Mercedes,5.0,0,3.0,Dry,2-Stop,2.0,1.0,0.0,15.0,1,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Carlos Sainz,Ferrari,2.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Charles Leclerc,Ferrari,3.0,0,5.0,Dry,2-Stop,2.0,1.0,0.0,10.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Lewis Hamilton,Mercedes,9.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Oscar Piastri,Mclaren,6.0,0,7.0,Dry,2-Stop,2.0,1.0,0.0,6.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Sergio Perez,Red Bull,7.0,0,8.0,Dry,2-Stop,2.0,1.0,0.0,4.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Pierre Gasly,Alpine,17.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Yuki Tsunoda,Racing Bulls,10.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Daniel Ricciardo,Racing Bulls,18.0,0,11.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Fernando Alonso,Aston Martin,8.0,0,12.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Esteban Ocon,Alpine,15.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Lance Stroll,Aston Martin,11.0,0,14.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Nico Hulkenberg,Haas,14.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Alexander Albon,Williams,16.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Kevin Magnussen,Haas,13.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Zhou Guanyu,Kick Sauber,19.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Valtteri Bottas,Kick Sauber,12.0,0,19.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,18.0,Singapore Grand Prix,Singapore,Logan Sargeant,Williams,20.0,0,20.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Max Verstappen,Red Bull,1.0,1,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,19.0,United States Grand Prix,Austin,Lewis Hamilton,Mercedes,2.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2024.0,19.0,United States Grand Prix,Austin,Oscar Piastri,Mclaren,10.0,0,3.0,Dry,1-Stop,1.0,0.0,0.0,15.0,1,0
+2024.0,19.0,United States Grand Prix,Austin,Esteban Ocon,Alpine,11.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Lando Norris,Mclaren,8.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Alexander Albon,Williams,14.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Carlos Sainz,Ferrari,7.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Yuki Tsunoda,Racing Bulls,18.0,0,8.0,Dry,2-Stop,2.0,1.0,0.0,4.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Fernando Alonso,Aston Martin,9.0,0,9.0,Dry,2-Stop,2.0,1.0,0.0,2.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Charles Leclerc,Ferrari,4.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Sergio Perez,Red Bull,3.0,0,11.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,George Russell,Mercedes,5.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Lance Stroll,Aston Martin,6.0,0,13.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Pierre Gasly,Alpine,12.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Kevin Magnussen,Haas,16.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Nico Hulkenberg,Haas,15.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Daniel Ricciardo,Racing Bulls,13.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Zhou Guanyu,Kick Sauber,20.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Logan Sargeant,Williams,17.0,0,19.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,19.0,United States Grand Prix,Austin,Valtteri Bottas,Kick Sauber,19.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Max Verstappen,Red Bull,5.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Lewis Hamilton,Mercedes,1.0,1,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Sergio Perez,Red Bull,7.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Carlos Sainz,Ferrari,4.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Oscar Piastri,Mclaren,3.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,George Russell,Mercedes,8.0,0,6.0,Dry,1-Stop,1.0,1.0,0.0,8.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Charles Leclerc,Ferrari,2.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Fernando Alonso,Aston Martin,9.0,0,8.0,Dry,1-Stop,1.0,0.0,1.0,4.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Lando Norris,Mclaren,6.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Kevin Magnussen,Haas,15.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Alexander Albon,Williams,16.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Yuki Tsunoda,Racing Bulls,11.0,0,12.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Lance Stroll,Aston Martin,12.0,0,13.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Pierre Gasly,Alpine,19.0,0,14.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Logan Sargeant,Williams,14.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Zhou Guanyu,Kick Sauber,20.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Daniel Ricciardo,Racing Bulls,10.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Valtteri Bottas,Kick Sauber,13.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Nico Hulkenberg,Haas,18.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,20.0,Mexico City Grand Prix,Mexico City,Esteban Ocon,Alpine,17.0,0,20.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Charles Leclerc,Ferrari,1.0,1,1.0,Wet,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Carlos Sainz,Ferrari,9.0,0,2.0,Wet,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,George Russell,Mercedes,5.0,0,3.0,Wet,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Max Verstappen,Red Bull,4.0,0,4.0,Wet,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Sergio Perez,Red Bull,6.0,0,5.0,Wet,3-Stop,3.0,0.0,0.0,10.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Oscar Piastri,Mclaren,2.0,0,6.0,Wet,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Fernando Alonso,Aston Martin,7.0,0,7.0,Wet,1-Stop,1.0,0.0,0.0,6.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Lewis Hamilton,Mercedes,8.0,0,8.0,Wet,3-Stop,3.0,1.0,0.0,4.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Pierre Gasly,Alpine,17.0,0,9.0,Wet,2-Stop,2.0,0.0,0.0,2.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Lando Norris,Mclaren,3.0,0,10.0,Wet,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Valtteri Bottas,Kick Sauber,10.0,0,11.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Lance Stroll,Aston Martin,13.0,0,12.0,Wet,3-Stop,3.0,1.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Logan Sargeant,Williams,12.0,0,13.0,Wet,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Nico Hulkenberg,Haas,18.0,0,14.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Daniel Ricciardo,Racing Bulls,11.0,0,15.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Zhou Guanyu,Kick Sauber,15.0,0,16.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Yuki Tsunoda,Racing Bulls,16.0,0,17.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Esteban Ocon,Alpine,19.0,0,18.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Kevin Magnussen,Haas,14.0,0,19.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,21.0,São Paulo Grand Prix,Interlagos,Alexander Albon,Williams,20.0,0,20.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Lewis Hamilton,Mercedes,2.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Max Verstappen,Red Bull,1.0,1,2.0,Dry,3-Stop,3.0,0.0,0.0,18.0,1,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Sergio Perez,Red Bull,3.0,0,3.0,Dry,2-Stop,2.0,1.0,0.0,15.0,1,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Carlos Sainz,Ferrari,4.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Charles Leclerc,Ferrari,6.0,0,5.0,Dry,1-Stop,1.0,0.0,0.0,10.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Oscar Piastri,Mclaren,7.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Lance Stroll,Aston Martin,13.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Lando Norris,Mclaren,8.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Fernando Alonso,Aston Martin,9.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,George Russell,Mercedes,5.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Yuki Tsunoda,Racing Bulls,11.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Valtteri Bottas,Kick Sauber,17.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Pierre Gasly,Alpine,12.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Esteban Ocon,Alpine,10.0,0,14.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Daniel Ricciardo,Racing Bulls,16.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Kevin Magnussen,Haas,20.0,0,16.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Nico Hulkenberg,Haas,15.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Zhou Guanyu,Kick Sauber,19.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Logan Sargeant,Williams,18.0,0,19.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,22.0,Las Vegas Grand Prix,Las Vegas,Alexander Albon,Williams,14.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Max Verstappen,Red Bull,2.0,0,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2024.0,23.0,Qatar Grand Prix,Lusail,Lewis Hamilton,Mercedes,7.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2024.0,23.0,Qatar Grand Prix,Lusail,George Russell,Mercedes,5.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Lando Norris,Mclaren,1.0,1,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Oscar Piastri,Mclaren,3.0,0,5.0,Dry,1-Stop,1.0,0.0,0.0,10.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Pierre Gasly,Alpine,14.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Carlos Sainz,Ferrari,10.0,0,7.0,Dry,1-Stop,1.0,1.0,0.0,6.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Yuki Tsunoda,Racing Bulls,9.0,0,8.0,Dry,3-Stop,3.0,1.0,0.0,4.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Sergio Perez,Red Bull,8.0,0,9.0,Dry,3-Stop,3.0,0.0,0.0,2.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Fernando Alonso,Aston Martin,6.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Daniel Ricciardo,Racing Bulls,11.0,0,11.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Charles Leclerc,Ferrari,4.0,0,12.0,Dry,2-Stop,2.0,1.0,1.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Esteban Ocon,Alpine,13.0,0,13.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Lance Stroll,Aston Martin,20.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Kevin Magnussen,Haas,12.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Zhou Guanyu,Kick Sauber,15.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Nico Hulkenberg,Haas,19.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Alexander Albon,Williams,16.0,0,18.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Valtteri Bottas,Kick Sauber,18.0,0,19.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,23.0,Qatar Grand Prix,Lusail,Logan Sargeant,Williams,17.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lewis Hamilton,Mercedes,6.0,0,1.0,Dry,2-Stop,2.0,1.0,0.0,25.0,1,1
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lando Norris,Mclaren,8.0,0,2.0,Dry,1-Stop,1.0,0.0,1.0,18.0,1,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Max Verstappen,Red Bull,2.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Sergio Perez,Red Bull,3.0,0,4.0,Dry,3-Stop,3.0,0.0,0.0,12.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Charles Leclerc,Ferrari,5.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Oscar Piastri,Mclaren,4.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lance Stroll,Aston Martin,9.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Pierre Gasly,Alpine,18.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,George Russell,Mercedes,1.0,1,9.0,Dry,2-Stop,2.0,0.0,1.0,2.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Carlos Sainz,Ferrari,7.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Daniel Ricciardo,Racing Bulls,15.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Nico Hulkenberg,Haas,19.0,0,12.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Fernando Alonso,Aston Martin,11.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Zhou Guanyu,Kick Sauber,12.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Logan Sargeant,Williams,16.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Yuki Tsunoda,Racing Bulls,10.0,0,16.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Esteban Ocon,Alpine,17.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Alexander Albon,Williams,14.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Valtteri Bottas,Kick Sauber,20.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2024.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Kevin Magnussen,Haas,13.0,0,20.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Lewis Hamilton,Ferrari,1.0,1,1.0,Dry,3-Stop,3.0,0.0,0.0,25.0,1,1
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Charles Leclerc,Ferrari,2.0,0,2.0,Dry,1-Stop,1.0,1.0,0.0,18.0,1,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Oscar Piastri,Mclaren,3.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Fernando Alonso,Aston Martin,9.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Liam Lawson,Red Bull,19.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,George Russell,Mercedes,7.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Isack Hadjar,Racing Bulls,11.0,0,7.0,Dry,1-Stop,1.0,0.0,0.0,6.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Lance Stroll,Aston Martin,18.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Nico Hulkenberg,Kick Sauber,20.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Pierre Gasly,Alpine,10.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Max Verstappen,Red Bull,5.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Gabriel Bortoleto,Kick Sauber,15.0,0,12.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Esteban Ocon,Haas,13.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Kimi Antonelli,Mercedes,12.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Lando Norris,Mclaren,4.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Yuki Tsunoda,Racing Bulls,8.0,0,16.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Carlos Sainz,Williams,6.0,0,17.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Jack Doohan,Alpine,16.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Oliver Bearman,Haas,17.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,1.0,Bahrain Grand Prix,Sakhir,Alexander Albon,Williams,14.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Fernando Alonso,Aston Martin,7.0,0,1.0,Dry,3-Stop,3.0,0.0,0.0,25.0,1,1
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lewis Hamilton,Ferrari,3.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Charles Leclerc,Ferrari,4.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Isack Hadjar,Racing Bulls,19.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lando Norris,Mclaren,1.0,1,5.0,Dry,1-Stop,1.0,1.0,0.0,10.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Oscar Piastri,Mclaren,2.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Lance Stroll,Aston Martin,16.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Max Verstappen,Red Bull,6.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Kimi Antonelli,Mercedes,12.0,0,9.0,Dry,2-Stop,2.0,0.0,1.0,2.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Carlos Sainz,Williams,8.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Alexander Albon,Williams,9.0,0,11.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Yuki Tsunoda,Racing Bulls,11.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,George Russell,Mercedes,5.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Jack Doohan,Alpine,18.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Nico Hulkenberg,Kick Sauber,13.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Liam Lawson,Red Bull,10.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Esteban Ocon,Haas,15.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Oliver Bearman,Haas,17.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Pierre Gasly,Alpine,14.0,0,19.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,2.0,Saudi Arabian Grand Prix,Jeddah,Gabriel Bortoleto,Kick Sauber,20.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Lando Norris,Mclaren,9.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,3.0,Australian Grand Prix,Melbourne,Lewis Hamilton,Ferrari,1.0,1,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2025.0,3.0,Australian Grand Prix,Melbourne,George Russell,Mercedes,2.0,0,3.0,Dry,1-Stop,1.0,0.0,0.0,15.0,1,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Charles Leclerc,Ferrari,3.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Max Verstappen,Red Bull,6.0,0,5.0,Dry,1-Stop,1.0,0.0,0.0,10.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Liam Lawson,Red Bull,4.0,0,6.0,Dry,1-Stop,1.0,1.0,0.0,8.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Oscar Piastri,Mclaren,7.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Kimi Antonelli,Mercedes,14.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Isack Hadjar,Racing Bulls,10.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Pierre Gasly,Alpine,16.0,0,10.0,Dry,1-Stop,1.0,1.0,0.0,1.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Fernando Alonso,Aston Martin,5.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Alexander Albon,Williams,20.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Nico Hulkenberg,Kick Sauber,19.0,0,13.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Gabriel Bortoleto,Kick Sauber,18.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Yuki Tsunoda,Racing Bulls,13.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Lance Stroll,Aston Martin,12.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Carlos Sainz,Williams,8.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Oliver Bearman,Haas,15.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Esteban Ocon,Haas,17.0,0,19.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,3.0,Australian Grand Prix,Melbourne,Jack Doohan,Alpine,11.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Max Verstappen,Red Bull,2.0,0,1.0,Wet,3-Stop,3.0,1.0,0.0,25.0,1,1
+2025.0,4.0,Japanese Grand Prix,Suzuka,Charles Leclerc,Ferrari,8.0,0,2.0,Wet,3-Stop,3.0,1.0,0.0,18.0,1,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Fernando Alonso,Aston Martin,10.0,0,3.0,Wet,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Lando Norris,Mclaren,4.0,0,4.0,Wet,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Oscar Piastri,Mclaren,3.0,0,5.0,Wet,1-Stop,1.0,1.0,0.0,10.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Gabriel Bortoleto,Kick Sauber,17.0,0,6.0,Wet,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Liam Lawson,Red Bull,11.0,0,7.0,Wet,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Alexander Albon,Williams,14.0,0,8.0,Wet,2-Stop,2.0,1.0,0.0,4.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,George Russell,Mercedes,6.0,0,9.0,Wet,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Kimi Antonelli,Mercedes,5.0,0,10.0,Wet,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Lewis Hamilton,Ferrari,1.0,1,11.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Pierre Gasly,Alpine,12.0,0,12.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Lance Stroll,Aston Martin,16.0,0,13.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Carlos Sainz,Williams,7.0,0,14.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Oliver Bearman,Haas,15.0,0,15.0,Wet,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Isack Hadjar,Racing Bulls,18.0,0,16.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Yuki Tsunoda,Racing Bulls,9.0,0,17.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Esteban Ocon,Haas,13.0,0,18.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Nico Hulkenberg,Kick Sauber,19.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,4.0,Japanese Grand Prix,Suzuka,Jack Doohan,Alpine,20.0,0,20.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Oscar Piastri,Mclaren,8.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,5.0,Chinese Grand Prix,Shanghai,George Russell,Mercedes,5.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Lando Norris,Mclaren,1.0,1,3.0,Dry,1-Stop,1.0,0.0,0.0,15.0,1,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Charles Leclerc,Ferrari,3.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Lewis Hamilton,Ferrari,2.0,0,5.0,Dry,3-Stop,3.0,1.0,0.0,10.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Fernando Alonso,Aston Martin,4.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Liam Lawson,Red Bull,9.0,0,7.0,Dry,2-Stop,2.0,0.0,1.0,6.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Kimi Antonelli,Mercedes,12.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Pierre Gasly,Alpine,13.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Nico Hulkenberg,Kick Sauber,15.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Carlos Sainz,Williams,7.0,0,11.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Jack Doohan,Alpine,18.0,0,12.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Oliver Bearman,Haas,16.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Max Verstappen,Red Bull,6.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Lance Stroll,Aston Martin,11.0,0,15.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Esteban Ocon,Haas,14.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Alexander Albon,Williams,20.0,0,17.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Isack Hadjar,Racing Bulls,10.0,0,18.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Gabriel Bortoleto,Kick Sauber,17.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,5.0,Chinese Grand Prix,Shanghai,Yuki Tsunoda,Racing Bulls,19.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Charles Leclerc,Ferrari,2.0,0,1.0,Dry,2-Stop,2.0,1.0,0.0,25.0,1,1
+2025.0,6.0,Miami Grand Prix,Miami,Lewis Hamilton,Ferrari,5.0,0,2.0,Dry,2-Stop,2.0,0.0,1.0,18.0,1,0
+2025.0,6.0,Miami Grand Prix,Miami,George Russell,Mercedes,6.0,0,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2025.0,6.0,Miami Grand Prix,Miami,Max Verstappen,Red Bull,4.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Lando Norris,Mclaren,3.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Oscar Piastri,Mclaren,1.0,1,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Yuki Tsunoda,Racing Bulls,12.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Liam Lawson,Red Bull,13.0,0,8.0,Dry,1-Stop,1.0,1.0,0.0,4.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Fernando Alonso,Aston Martin,8.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Kimi Antonelli,Mercedes,15.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Carlos Sainz,Williams,11.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Alexander Albon,Williams,18.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Isack Hadjar,Racing Bulls,9.0,0,13.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Gabriel Bortoleto,Kick Sauber,20.0,0,14.0,Dry,2-Stop,2.0,1.0,1.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Lance Stroll,Aston Martin,16.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Oliver Bearman,Haas,19.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Nico Hulkenberg,Kick Sauber,10.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Pierre Gasly,Alpine,17.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Esteban Ocon,Haas,7.0,0,19.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,6.0,Miami Grand Prix,Miami,Jack Doohan,Alpine,14.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Isack Hadjar,Racing Bulls,12.0,0,1.0,Mixed,1-Stop,1.0,1.0,0.0,25.0,1,1
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Esteban Ocon,Haas,19.0,0,2.0,Mixed,3-Stop,3.0,0.0,0.0,18.0,1,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Charles Leclerc,Ferrari,5.0,0,3.0,Mixed,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Lewis Hamilton,Ferrari,3.0,0,4.0,Mixed,3-Stop,3.0,1.0,0.0,12.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Max Verstappen,Red Bull,1.0,1,5.0,Mixed,2-Stop,2.0,0.0,1.0,10.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Jack Doohan,Alpine,18.0,0,6.0,Mixed,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Yuki Tsunoda,Racing Bulls,7.0,0,7.0,Mixed,2-Stop,2.0,1.0,0.0,6.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Liam Lawson,Red Bull,9.0,0,8.0,Mixed,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Lando Norris,Mclaren,2.0,0,9.0,Mixed,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Oscar Piastri,Mclaren,4.0,0,10.0,Mixed,3-Stop,3.0,0.0,0.0,1.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Pierre Gasly,Alpine,13.0,0,11.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Carlos Sainz,Williams,14.0,0,12.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Kimi Antonelli,Mercedes,6.0,0,13.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Lance Stroll,Aston Martin,15.0,0,14.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,George Russell,Mercedes,8.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Alexander Albon,Williams,16.0,0,16.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Nico Hulkenberg,Kick Sauber,10.0,0,17.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Gabriel Bortoleto,Kick Sauber,17.0,0,18.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Fernando Alonso,Aston Martin,11.0,0,19.0,Mixed,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,7.0,Emilia Romagna Grand Prix,Imola,Oliver Bearman,Haas,20.0,0,20.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Lewis Hamilton,Ferrari,1.0,1,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2025.0,8.0,Monaco Grand Prix,Monaco,Charles Leclerc,Ferrari,3.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Max Verstappen,Red Bull,9.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Oscar Piastri,Mclaren,6.0,0,4.0,Dry,3-Stop,3.0,0.0,0.0,12.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Carlos Sainz,Williams,10.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,George Russell,Mercedes,5.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Jack Doohan,Alpine,20.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Yuki Tsunoda,Racing Bulls,4.0,0,8.0,Dry,1-Stop,1.0,0.0,0.0,4.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Nico Hulkenberg,Kick Sauber,11.0,0,9.0,Dry,3-Stop,3.0,0.0,0.0,2.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Lando Norris,Mclaren,2.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Kimi Antonelli,Mercedes,7.0,0,11.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Oliver Bearman,Haas,15.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Alexander Albon,Williams,16.0,0,13.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Fernando Alonso,Aston Martin,8.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Esteban Ocon,Haas,14.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Liam Lawson,Red Bull,12.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Lance Stroll,Aston Martin,13.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Gabriel Bortoleto,Kick Sauber,17.0,0,18.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Isack Hadjar,Racing Bulls,19.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,8.0,Monaco Grand Prix,Monaco,Pierre Gasly,Alpine,18.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Lewis Hamilton,Ferrari,1.0,1,1.0,Wet,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,9.0,Canadian Grand Prix,Montreal,Lando Norris,Mclaren,5.0,0,2.0,Wet,1-Stop,1.0,0.0,1.0,18.0,1,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Oscar Piastri,Mclaren,2.0,0,3.0,Wet,1-Stop,1.0,1.0,1.0,15.0,1,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Lance Stroll,Aston Martin,15.0,0,4.0,Wet,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Carlos Sainz,Williams,12.0,0,5.0,Wet,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Nico Hulkenberg,Kick Sauber,16.0,0,6.0,Wet,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Kimi Antonelli,Mercedes,4.0,0,7.0,Wet,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Isack Hadjar,Racing Bulls,9.0,0,8.0,Wet,2-Stop,2.0,1.0,0.0,4.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Fernando Alonso,Aston Martin,7.0,0,9.0,Wet,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Charles Leclerc,Ferrari,6.0,0,10.0,Wet,3-Stop,3.0,0.0,0.0,1.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,George Russell,Mercedes,10.0,0,11.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Pierre Gasly,Alpine,18.0,0,12.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Esteban Ocon,Haas,20.0,0,13.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Max Verstappen,Red Bull,3.0,0,14.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Liam Lawson,Red Bull,11.0,0,15.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Yuki Tsunoda,Racing Bulls,13.0,0,16.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Alexander Albon,Williams,8.0,0,17.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Gabriel Bortoleto,Kick Sauber,17.0,0,18.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Jack Doohan,Alpine,19.0,0,19.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,9.0,Canadian Grand Prix,Montreal,Oliver Bearman,Haas,14.0,0,20.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Charles Leclerc,Ferrari,6.0,0,1.0,Wet,3-Stop,3.0,0.0,0.0,25.0,1,1
+2025.0,10.0,Spanish Grand Prix,Barcelona,Lando Norris,Mclaren,3.0,0,2.0,Wet,2-Stop,2.0,1.0,0.0,18.0,1,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Lewis Hamilton,Ferrari,1.0,1,3.0,Wet,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Max Verstappen,Red Bull,4.0,0,4.0,Wet,3-Stop,3.0,0.0,0.0,12.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Kimi Antonelli,Mercedes,8.0,0,5.0,Wet,3-Stop,3.0,0.0,0.0,10.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Oliver Bearman,Haas,17.0,0,6.0,Wet,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Isack Hadjar,Racing Bulls,13.0,0,7.0,Wet,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Pierre Gasly,Alpine,11.0,0,8.0,Wet,3-Stop,3.0,0.0,0.0,4.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,George Russell,Mercedes,5.0,0,9.0,Wet,2-Stop,2.0,1.0,0.0,2.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Nico Hulkenberg,Kick Sauber,14.0,0,10.0,Wet,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Esteban Ocon,Haas,15.0,0,11.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Alexander Albon,Williams,20.0,0,12.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Yuki Tsunoda,Racing Bulls,16.0,0,13.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Oscar Piastri,Mclaren,2.0,0,14.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Jack Doohan,Alpine,19.0,0,15.0,Wet,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Liam Lawson,Red Bull,9.0,0,16.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Carlos Sainz,Williams,7.0,0,17.0,Wet,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Lance Stroll,Aston Martin,18.0,0,18.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Fernando Alonso,Aston Martin,10.0,0,19.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,10.0,Spanish Grand Prix,Barcelona,Gabriel Bortoleto,Kick Sauber,12.0,0,20.0,Wet,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Charles Leclerc,Ferrari,5.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,11.0,Austrian Grand Prix,Spielberg,Lando Norris,Mclaren,7.0,0,2.0,Dry,2-Stop,2.0,1.0,0.0,18.0,1,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Lewis Hamilton,Ferrari,1.0,1,3.0,Dry,1-Stop,1.0,0.0,1.0,15.0,1,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Isack Hadjar,Racing Bulls,11.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Pierre Gasly,Alpine,15.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Oscar Piastri,Mclaren,2.0,0,6.0,Dry,3-Stop,3.0,0.0,0.0,8.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Max Verstappen,Red Bull,9.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Liam Lawson,Red Bull,3.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Alexander Albon,Williams,16.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Yuki Tsunoda,Racing Bulls,6.0,0,10.0,Dry,3-Stop,3.0,1.0,0.0,1.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,George Russell,Mercedes,4.0,0,11.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Carlos Sainz,Williams,14.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Fernando Alonso,Aston Martin,18.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Oliver Bearman,Haas,12.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Lance Stroll,Aston Martin,17.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Gabriel Bortoleto,Kick Sauber,19.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Kimi Antonelli,Mercedes,8.0,0,17.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Jack Doohan,Alpine,13.0,0,18.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Nico Hulkenberg,Kick Sauber,10.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,11.0,Austrian Grand Prix,Spielberg,Esteban Ocon,Haas,20.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Lando Norris,Mclaren,3.0,0,1.0,Mixed,1-Stop,1.0,0.0,0.0,25.0,1,1
+2025.0,12.0,British Grand Prix,Silverstone,Lewis Hamilton,Ferrari,2.0,0,2.0,Mixed,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,12.0,British Grand Prix,Silverstone,Max Verstappen,Red Bull,4.0,0,3.0,Mixed,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,12.0,British Grand Prix,Silverstone,Oscar Piastri,Mclaren,5.0,0,4.0,Mixed,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Charles Leclerc,Ferrari,1.0,1,5.0,Mixed,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Fernando Alonso,Aston Martin,7.0,0,6.0,Mixed,2-Stop,2.0,1.0,0.0,8.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,George Russell,Mercedes,6.0,0,7.0,Mixed,1-Stop,1.0,0.0,0.0,6.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Alexander Albon,Williams,19.0,0,8.0,Mixed,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Carlos Sainz,Williams,13.0,0,9.0,Mixed,3-Stop,3.0,0.0,0.0,2.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Lance Stroll,Aston Martin,11.0,0,10.0,Mixed,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Esteban Ocon,Haas,14.0,0,11.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Isack Hadjar,Racing Bulls,15.0,0,12.0,Mixed,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Liam Lawson,Red Bull,9.0,0,13.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Yuki Tsunoda,Racing Bulls,8.0,0,14.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Gabriel Bortoleto,Kick Sauber,12.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Oliver Bearman,Haas,20.0,0,16.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Jack Doohan,Alpine,16.0,0,17.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Kimi Antonelli,Mercedes,10.0,0,18.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Nico Hulkenberg,Kick Sauber,18.0,0,19.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,12.0,British Grand Prix,Silverstone,Pierre Gasly,Alpine,17.0,0,20.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Liam Lawson,Red Bull,8.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,13.0,Hungarian Grand Prix,Budapest,Oscar Piastri,Mclaren,6.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,George Russell,Mercedes,12.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Lando Norris,Mclaren,1.0,1,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Lewis Hamilton,Ferrari,2.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Yuki Tsunoda,Racing Bulls,10.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Gabriel Bortoleto,Kick Sauber,14.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Charles Leclerc,Ferrari,5.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Jack Doohan,Alpine,19.0,0,9.0,Dry,1-Stop,1.0,0.0,1.0,2.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Max Verstappen,Red Bull,4.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Kimi Antonelli,Mercedes,3.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Isack Hadjar,Racing Bulls,16.0,0,12.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Carlos Sainz,Williams,17.0,0,13.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Alexander Albon,Williams,15.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Oliver Bearman,Haas,9.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Esteban Ocon,Haas,20.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Fernando Alonso,Aston Martin,11.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Pierre Gasly,Alpine,13.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Nico Hulkenberg,Kick Sauber,7.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,13.0,Hungarian Grand Prix,Budapest,Lance Stroll,Aston Martin,18.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Max Verstappen,Red Bull,8.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,14.0,Belgian Grand Prix,Spa,Lewis Hamilton,Ferrari,3.0,0,2.0,Dry,2-Stop,2.0,1.0,0.0,18.0,1,0
+2025.0,14.0,Belgian Grand Prix,Spa,George Russell,Mercedes,5.0,0,3.0,Dry,2-Stop,2.0,1.0,0.0,15.0,1,0
+2025.0,14.0,Belgian Grand Prix,Spa,Lando Norris,Mclaren,2.0,0,4.0,Dry,1-Stop,1.0,1.0,0.0,12.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Oscar Piastri,Mclaren,4.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Charles Leclerc,Ferrari,1.0,1,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Yuki Tsunoda,Racing Bulls,12.0,0,7.0,Dry,3-Stop,3.0,1.0,0.0,6.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Carlos Sainz,Williams,7.0,0,8.0,Dry,3-Stop,3.0,1.0,0.0,4.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Lance Stroll,Aston Martin,17.0,0,9.0,Dry,1-Stop,1.0,0.0,1.0,2.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Liam Lawson,Red Bull,10.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Oliver Bearman,Haas,13.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Isack Hadjar,Racing Bulls,11.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Pierre Gasly,Alpine,20.0,0,13.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Fernando Alonso,Aston Martin,9.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Kimi Antonelli,Mercedes,15.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Jack Doohan,Alpine,16.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Alexander Albon,Williams,6.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Esteban Ocon,Haas,18.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Nico Hulkenberg,Kick Sauber,19.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,14.0,Belgian Grand Prix,Spa,Gabriel Bortoleto,Kick Sauber,14.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Charles Leclerc,Ferrari,1.0,1,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Liam Lawson,Red Bull,9.0,0,2.0,Dry,3-Stop,3.0,0.0,0.0,18.0,1,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Oscar Piastri,Mclaren,6.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Max Verstappen,Red Bull,4.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,George Russell,Mercedes,5.0,0,5.0,Dry,3-Stop,3.0,0.0,1.0,10.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Lando Norris,Mclaren,3.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Carlos Sainz,Williams,8.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Lewis Hamilton,Ferrari,2.0,0,8.0,Dry,3-Stop,3.0,0.0,0.0,4.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Fernando Alonso,Aston Martin,14.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Kimi Antonelli,Mercedes,12.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Jack Doohan,Alpine,20.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Lance Stroll,Aston Martin,10.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Gabriel Bortoleto,Kick Sauber,17.0,0,13.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Nico Hulkenberg,Kick Sauber,11.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Esteban Ocon,Haas,18.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Yuki Tsunoda,Racing Bulls,13.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Oliver Bearman,Haas,15.0,0,17.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Isack Hadjar,Racing Bulls,16.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Pierre Gasly,Alpine,19.0,0,19.0,Dry,3-Stop,3.0,0.0,1.0,0.0,0,0
+2025.0,15.0,Dutch Grand Prix,Zandvoort,Alexander Albon,Williams,7.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Max Verstappen,Red Bull,2.0,0,1.0,Mixed,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,16.0,Italian Grand Prix,Monza,Charles Leclerc,Ferrari,3.0,0,2.0,Mixed,2-Stop,2.0,1.0,1.0,18.0,1,0
+2025.0,16.0,Italian Grand Prix,Monza,Carlos Sainz,Williams,11.0,0,3.0,Mixed,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,16.0,Italian Grand Prix,Monza,Fernando Alonso,Aston Martin,7.0,0,4.0,Mixed,2-Stop,2.0,1.0,0.0,12.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Lando Norris,Mclaren,4.0,0,5.0,Mixed,2-Stop,2.0,0.0,1.0,10.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Isack Hadjar,Racing Bulls,15.0,0,6.0,Mixed,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Lance Stroll,Aston Martin,17.0,0,7.0,Mixed,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Jack Doohan,Alpine,19.0,0,8.0,Mixed,3-Stop,3.0,1.0,0.0,4.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Oscar Piastri,Mclaren,5.0,0,9.0,Mixed,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Liam Lawson,Red Bull,6.0,0,10.0,Mixed,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,George Russell,Mercedes,9.0,0,11.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Lewis Hamilton,Ferrari,1.0,1,12.0,Mixed,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Kimi Antonelli,Mercedes,8.0,0,13.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Oliver Bearman,Haas,20.0,0,14.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Esteban Ocon,Haas,13.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Yuki Tsunoda,Racing Bulls,10.0,0,16.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Pierre Gasly,Alpine,16.0,0,17.0,Mixed,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Alexander Albon,Williams,12.0,0,18.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Gabriel Bortoleto,Kick Sauber,18.0,0,19.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,16.0,Italian Grand Prix,Monza,Nico Hulkenberg,Kick Sauber,14.0,0,20.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Lando Norris,Mclaren,2.0,0,1.0,Dry,2-Stop,2.0,0.0,1.0,25.0,1,1
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Charles Leclerc,Ferrari,1.0,1,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Jack Doohan,Alpine,18.0,0,3.0,Dry,3-Stop,3.0,0.0,0.0,15.0,1,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Fernando Alonso,Aston Martin,16.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,George Russell,Mercedes,5.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Max Verstappen,Red Bull,7.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Lewis Hamilton,Ferrari,3.0,0,7.0,Dry,1-Stop,1.0,0.0,0.0,6.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Pierre Gasly,Alpine,12.0,0,8.0,Dry,2-Stop,2.0,0.0,1.0,4.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Oscar Piastri,Mclaren,4.0,0,9.0,Dry,2-Stop,2.0,1.0,0.0,2.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Oliver Bearman,Haas,17.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Isack Hadjar,Racing Bulls,14.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Kimi Antonelli,Mercedes,20.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Liam Lawson,Red Bull,6.0,0,13.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Carlos Sainz,Williams,9.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Alexander Albon,Williams,8.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Lance Stroll,Aston Martin,13.0,0,16.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Yuki Tsunoda,Racing Bulls,15.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Nico Hulkenberg,Kick Sauber,11.0,0,18.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Esteban Ocon,Haas,10.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,17.0,Azerbaijan Grand Prix,Baku,Gabriel Bortoleto,Kick Sauber,19.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Lando Norris,Mclaren,3.0,0,1.0,Dry,1-Stop,1.0,0.0,0.0,25.0,1,1
+2025.0,18.0,Singapore Grand Prix,Singapore,Max Verstappen,Red Bull,11.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Oscar Piastri,Mclaren,1.0,1,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Charles Leclerc,Ferrari,2.0,0,4.0,Dry,2-Stop,2.0,1.0,1.0,12.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Lewis Hamilton,Ferrari,5.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Isack Hadjar,Racing Bulls,17.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,George Russell,Mercedes,6.0,0,7.0,Dry,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Fernando Alonso,Aston Martin,9.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Liam Lawson,Red Bull,8.0,0,9.0,Dry,3-Stop,3.0,0.0,0.0,2.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Carlos Sainz,Williams,10.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Nico Hulkenberg,Kick Sauber,15.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Esteban Ocon,Haas,12.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Kimi Antonelli,Mercedes,7.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Oliver Bearman,Haas,19.0,0,14.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Pierre Gasly,Alpine,13.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Gabriel Bortoleto,Kick Sauber,14.0,0,16.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Yuki Tsunoda,Racing Bulls,4.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Alexander Albon,Williams,18.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Jack Doohan,Alpine,16.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,18.0,Singapore Grand Prix,Singapore,Lance Stroll,Aston Martin,20.0,0,20.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Max Verstappen,Red Bull,2.0,0,1.0,Mixed,3-Stop,3.0,1.0,0.0,25.0,1,1
+2025.0,19.0,United States Grand Prix,Austin,Lewis Hamilton,Ferrari,1.0,1,2.0,Mixed,2-Stop,2.0,1.0,0.0,18.0,1,0
+2025.0,19.0,United States Grand Prix,Austin,Oscar Piastri,Mclaren,7.0,0,3.0,Mixed,3-Stop,3.0,0.0,1.0,15.0,1,0
+2025.0,19.0,United States Grand Prix,Austin,Lando Norris,Mclaren,6.0,0,4.0,Mixed,2-Stop,2.0,1.0,0.0,12.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,George Russell,Mercedes,8.0,0,5.0,Mixed,2-Stop,2.0,1.0,0.0,10.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Fernando Alonso,Aston Martin,4.0,0,6.0,Mixed,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Oliver Bearman,Haas,11.0,0,7.0,Mixed,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Liam Lawson,Red Bull,10.0,0,8.0,Mixed,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Carlos Sainz,Williams,9.0,0,9.0,Mixed,2-Stop,2.0,0.0,1.0,2.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Yuki Tsunoda,Racing Bulls,12.0,0,10.0,Mixed,2-Stop,2.0,0.0,1.0,1.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Isack Hadjar,Racing Bulls,18.0,0,11.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Esteban Ocon,Haas,14.0,0,12.0,Mixed,3-Stop,3.0,0.0,1.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Jack Doohan,Alpine,19.0,0,13.0,Mixed,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Charles Leclerc,Ferrari,5.0,0,14.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Gabriel Bortoleto,Kick Sauber,20.0,0,15.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Kimi Antonelli,Mercedes,3.0,0,16.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Pierre Gasly,Alpine,17.0,0,17.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Lance Stroll,Aston Martin,13.0,0,18.0,Mixed,2-Stop,2.0,1.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Nico Hulkenberg,Kick Sauber,16.0,0,19.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,19.0,United States Grand Prix,Austin,Alexander Albon,Williams,15.0,0,20.0,Mixed,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Max Verstappen,Red Bull,3.0,0,1.0,Dry,1-Stop,1.0,0.0,1.0,25.0,1,1
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Lando Norris,Mclaren,4.0,0,2.0,Dry,2-Stop,2.0,1.0,0.0,18.0,1,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Lewis Hamilton,Ferrari,1.0,1,3.0,Dry,1-Stop,1.0,1.0,0.0,15.0,1,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Liam Lawson,Red Bull,8.0,0,4.0,Dry,2-Stop,2.0,1.0,0.0,12.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Oscar Piastri,Mclaren,2.0,0,5.0,Dry,1-Stop,1.0,0.0,0.0,10.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Carlos Sainz,Williams,11.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Charles Leclerc,Ferrari,5.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Fernando Alonso,Aston Martin,7.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Lance Stroll,Aston Martin,13.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,George Russell,Mercedes,6.0,0,10.0,Dry,3-Stop,3.0,0.0,0.0,1.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Kimi Antonelli,Mercedes,9.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Yuki Tsunoda,Racing Bulls,19.0,0,12.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Pierre Gasly,Alpine,16.0,0,13.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Isack Hadjar,Racing Bulls,10.0,0,14.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Esteban Ocon,Haas,15.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Alexander Albon,Williams,14.0,0,16.0,Dry,2-Stop,2.0,0.0,1.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Jack Doohan,Alpine,12.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Oliver Bearman,Haas,18.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Nico Hulkenberg,Kick Sauber,20.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,20.0,Mexico City Grand Prix,Mexico City,Gabriel Bortoleto,Kick Sauber,17.0,0,20.0,Dry,2-Stop,2.0,1.0,1.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Max Verstappen,Red Bull,3.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Lewis Hamilton,Ferrari,5.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Lando Norris,Mclaren,4.0,0,3.0,Dry,3-Stop,3.0,0.0,1.0,15.0,1,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Fernando Alonso,Aston Martin,18.0,0,4.0,Dry,3-Stop,3.0,0.0,0.0,12.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Oscar Piastri,Mclaren,2.0,0,5.0,Dry,3-Stop,3.0,1.0,0.0,10.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Charles Leclerc,Ferrari,1.0,1,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Nico Hulkenberg,Kick Sauber,16.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Lance Stroll,Aston Martin,9.0,0,8.0,Dry,1-Stop,1.0,0.0,0.0,4.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Esteban Ocon,Haas,12.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Alexander Albon,Williams,17.0,0,10.0,Dry,1-Stop,1.0,0.0,1.0,1.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Liam Lawson,Red Bull,11.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,George Russell,Mercedes,7.0,0,12.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Yuki Tsunoda,Racing Bulls,19.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Carlos Sainz,Williams,10.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Oliver Bearman,Haas,20.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Gabriel Bortoleto,Kick Sauber,15.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Kimi Antonelli,Mercedes,6.0,0,17.0,Dry,1-Stop,1.0,0.0,1.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Jack Doohan,Alpine,13.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Isack Hadjar,Racing Bulls,8.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,21.0,São Paulo Grand Prix,Interlagos,Pierre Gasly,Alpine,14.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Lando Norris,Mclaren,2.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Kimi Antonelli,Mercedes,10.0,0,2.0,Dry,1-Stop,1.0,0.0,0.0,18.0,1,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Liam Lawson,Red Bull,9.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Oscar Piastri,Mclaren,3.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Isack Hadjar,Racing Bulls,15.0,0,5.0,Dry,1-Stop,1.0,1.0,0.0,10.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Max Verstappen,Red Bull,5.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Lewis Hamilton,Ferrari,1.0,1,7.0,Dry,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Fernando Alonso,Aston Martin,8.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,George Russell,Mercedes,6.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Carlos Sainz,Williams,14.0,0,10.0,Dry,1-Stop,1.0,0.0,0.0,1.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Charles Leclerc,Ferrari,4.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Gabriel Bortoleto,Kick Sauber,16.0,0,12.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Pierre Gasly,Alpine,12.0,0,13.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Jack Doohan,Alpine,18.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Alexander Albon,Williams,19.0,0,15.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Oliver Bearman,Haas,11.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Esteban Ocon,Haas,20.0,0,17.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Nico Hulkenberg,Kick Sauber,17.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Yuki Tsunoda,Racing Bulls,7.0,0,19.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,22.0,Las Vegas Grand Prix,Las Vegas,Lance Stroll,Aston Martin,13.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Lando Norris,Mclaren,5.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,23.0,Qatar Grand Prix,Lusail,Oscar Piastri,Mclaren,1.0,1,2.0,Dry,3-Stop,3.0,0.0,0.0,18.0,1,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Lewis Hamilton,Ferrari,2.0,0,3.0,Dry,3-Stop,3.0,1.0,0.0,15.0,1,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Liam Lawson,Red Bull,7.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,George Russell,Mercedes,6.0,0,5.0,Dry,3-Stop,3.0,0.0,0.0,10.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Isack Hadjar,Racing Bulls,13.0,0,6.0,Dry,1-Stop,1.0,0.0,0.0,8.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Charles Leclerc,Ferrari,10.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Kimi Antonelli,Mercedes,9.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Fernando Alonso,Aston Martin,3.0,0,9.0,Dry,1-Stop,1.0,0.0,0.0,2.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Alexander Albon,Williams,8.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Carlos Sainz,Williams,15.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Nico Hulkenberg,Kick Sauber,14.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Max Verstappen,Red Bull,4.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Yuki Tsunoda,Racing Bulls,17.0,0,14.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Oliver Bearman,Haas,19.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Jack Doohan,Alpine,18.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Pierre Gasly,Alpine,12.0,0,17.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Esteban Ocon,Haas,16.0,0,18.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Gabriel Bortoleto,Kick Sauber,20.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,23.0,Qatar Grand Prix,Lusail,Lance Stroll,Aston Martin,11.0,0,20.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Charles Leclerc,Ferrari,4.0,0,1.0,Dry,2-Stop,2.0,0.0,0.0,25.0,1,1
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Oscar Piastri,Mclaren,1.0,1,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Carlos Sainz,Williams,17.0,0,3.0,Dry,1-Stop,1.0,1.0,0.0,15.0,1,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Liam Lawson,Red Bull,11.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Max Verstappen,Red Bull,5.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lando Norris,Mclaren,6.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Kimi Antonelli,Mercedes,12.0,0,7.0,Dry,3-Stop,3.0,0.0,0.0,6.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lewis Hamilton,Ferrari,2.0,0,8.0,Dry,3-Stop,3.0,0.0,0.0,4.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Fernando Alonso,Aston Martin,7.0,0,9.0,Dry,2-Stop,2.0,1.0,1.0,2.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Alexander Albon,Williams,10.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Yuki Tsunoda,Racing Bulls,8.0,0,11.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Nico Hulkenberg,Kick Sauber,14.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,George Russell,Mercedes,3.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Pierre Gasly,Alpine,15.0,0,14.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Gabriel Bortoleto,Kick Sauber,20.0,0,15.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Esteban Ocon,Haas,9.0,0,16.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Isack Hadjar,Racing Bulls,13.0,0,17.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Oliver Bearman,Haas,19.0,0,18.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Jack Doohan,Alpine,16.0,0,19.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2025.0,24.0,Abu Dhabi Grand Prix,Yas Marina,Lance Stroll,Aston Martin,18.0,0,20.0,Dry,1-Stop,1.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,George Russell,Mercedes,1.0,1,1.0,Dry,1-Stop,1.0,0.0,0.0,26.0,1,1
+2026.0,1.0,Australian Grand Prix,Melbourne,Kimi Antonelli,Mercedes,2.0,0,2.0,Dry,1-Stop,1.0,0.0,1.0,18.0,1,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Charles Leclerc,Ferrari,4.0,0,3.0,Dry,1-Stop,1.0,0.0,0.0,15.0,1,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Lewis Hamilton,Ferrari,6.0,0,4.0,Dry,1-Stop,1.0,0.0,0.0,12.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Lando Norris,Mclaren,5.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Max Verstappen,Red Bull,20.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Oliver Bearman,Haas,7.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Arvid Lindblad,Racing Bulls,9.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Gabriel Bortoleto,Audi,10.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Pierre Gasly,Alpine,11.0,0,10.0,Dry,2-Stop,2.0,0.0,0.0,1.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Esteban Ocon,Haas,12.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Alexander Albon,Williams,13.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Liam Lawson,Racing Bulls,8.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Franco Colapinto,Alpine,14.0,0,14.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Carlos Sainz,Williams,21.0,0,15.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Sergio Perez,Cadillac,18.0,0,16.0,Dry,3-Stop,3.0,0.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Lance Stroll,Aston Martin,22.0,0,17.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Fernando Alonso,Aston Martin,15.0,0,20.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Valtteri Bottas,Cadillac,19.0,0,20.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Isack Hadjar,Red Bull,3.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Oscar Piastri,Mclaren,5.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,1.0,Australian Grand Prix,Melbourne,Nico Hulkenberg,Audi,16.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Kimi Antonelli,Mercedes,1.0,1,1.0,Dry,2-Stop,2.0,0.0,0.0,26.0,1,1
+2026.0,2.0,Chinese Grand Prix,Shanghai,George Russell,Mercedes,2.0,0,2.0,Dry,2-Stop,2.0,0.0,0.0,18.0,1,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Lewis Hamilton,Ferrari,3.0,0,3.0,Dry,2-Stop,2.0,0.0,0.0,15.0,1,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Charles Leclerc,Ferrari,4.0,0,4.0,Dry,2-Stop,2.0,0.0,0.0,12.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Oliver Bearman,Haas,7.0,0,5.0,Dry,2-Stop,2.0,0.0,0.0,10.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Pierre Gasly,Alpine,5.0,0,6.0,Dry,2-Stop,2.0,0.0,0.0,8.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Liam Lawson,Racing Bulls,8.0,0,7.0,Dry,2-Stop,2.0,0.0,0.0,6.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Isack Hadjar,Red Bull,8.0,0,8.0,Dry,2-Stop,2.0,0.0,0.0,4.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Carlos Sainz,Williams,14.0,0,9.0,Dry,2-Stop,2.0,0.0,0.0,2.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Franco Colapinto,Alpine,12.0,0,10.0,Dry,2-Stop,2.0,1.0,0.0,1.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Nico Hulkenberg,Audi,11.0,0,11.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Arvid Lindblad,Racing Bulls,15.0,0,12.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Valtteri Bottas,Cadillac,16.0,0,13.0,Dry,2-Stop,2.0,0.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Esteban Ocon,Haas,13.0,0,14.0,Dry,2-Stop,2.0,1.0,5.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Sergio Perez,Cadillac,20.0,0,15.0,Dry,3-Stop,3.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Max Verstappen,Red Bull,6.0,0,20.0,Dry,2-Stop,2.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Fernando Alonso,Aston Martin,17.0,0,20.0,Dry,1-Stop,1.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Lance Stroll,Aston Martin,18.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Lando Norris,Mclaren,9.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Oscar Piastri,Mclaren,10.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Gabriel Bortoleto,Audi,13.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0
+2026.0,2.0,Chinese Grand Prix,Shanghai,Alexander Albon,Williams,18.0,0,20.0,Dry,0-Stop,0.0,1.0,0.0,0.0,0,0

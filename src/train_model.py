@@ -1,6 +1,10 @@
+
+# © 2026 Srikanth Chirikonda | PitWall AI | github.com/chirikondasrikanth/pitwallai
+
 """
 train_model.py — Enriched Feature Training Pipeline
 """
+
 
 import os, sys, json, joblib, logging
 import numpy as np

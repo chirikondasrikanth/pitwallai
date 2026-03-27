@@ -1,0 +1,32 @@
+{
+  "family": "pitwall-ai",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::024848462740:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "pitwall-ai",
+      "image": "024848462740.dkr.ecr.us-east-1.amazonaws.com/pitwall-ai:latest",
+      "portMappings": [
+        {
+          "containerPort": 8501,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {"name": "PORT", "value": "8501"},
+        {"name": "PYTHONPATH", "value": "/app"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/pitwall-ai",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

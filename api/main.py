@@ -1,3 +1,6 @@
+
+# © 2026 Srikanth Chirikonda | PitWall AI | github.com/chirikondasrikanth/pitwallai
+
 """
 api/main.py
 FastAPI REST API — exposes all platform capabilities as endpoints.
@@ -26,7 +29,8 @@ from typing import Optional, List
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -44,6 +48,17 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
 )
+
+_assets_dir = os.path.join(BASE_DIR, "dashboard", "assets")
+if os.path.isdir(_assets_dir):
+    app.mount("/assets", StaticFiles(directory=_assets_dir), name="assets")
+
+@app.get("/prediction", include_in_schema=False)
+async def prediction_page():
+    html_path = os.path.join(BASE_DIR, "dashboard", "f1_prediction.html")
+    if not os.path.isfile(html_path):
+        raise HTTPException(status_code=404, detail="f1_prediction.html not found in dashboard/")
+    return FileResponse(html_path)
 
 app.add_middleware(
     CORSMiddleware,

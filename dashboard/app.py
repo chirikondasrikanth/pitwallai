@@ -1,3 +1,6 @@
+
+# © 2026 Srikanth Chirikonda | PitWall AI | github.com/chirikondasrikanth/pitwallai
+
 """
 app.py — F1 Intelligence Platform Dashboard
 Streamlit-based analytics and prediction interface.
@@ -43,6 +46,7 @@ except Exception:
     DB_LIVE = False
 
 def get_driver_stats(driver, df=None):
+    """Use DB stats if available, else fall back to CSV."""
     if DB_LIVE:
         return db_driver_stats(driver)
     return csv_driver_stats(driver, df)
@@ -302,6 +306,7 @@ st.markdown("""
 # ─────────────────────────── HELPERS ───────────────────────────────
 @st.cache_data(ttl=60)
 def load_data():
+    """Load from enriched CSV (has all 39 features) or clean CSV fallback."""
     if DB_LIVE:
         df = load_race_data()
         if not df.empty:
@@ -310,6 +315,7 @@ def load_data():
 
 @st.cache_data(ttl=120)
 def get_summary(season):
+    """Season standings from DB or CSV."""
     if DB_LIVE:
         df = get_season_standings(season)
         if not df.empty:
@@ -359,7 +365,7 @@ with st.sidebar:
         selected_season = 2025
     
     st.markdown("---")
-
+    
     # DB Status indicator
     db_icon = "🟢" if DB_LIVE else "🔴"
     db_label = "Live DB" if DB_LIVE else "CSV Mode"
@@ -429,35 +435,220 @@ if "Race Predictor" in nav:
         
         pred = st.session_state.get("last_prediction")
         if pred and pred["circuit"] == circuit:
-            
-            # ─── Podium Cards ───
+
+            # ─── BROADCAST PODIUM VISUALIZATION ───
             st.markdown('<div class="section-title">🏆 Predicted Podium</div>', unsafe_allow_html=True)
-            p_cols = st.columns(3)
-            medals = [("🥇", "p1-card", "P1"), ("🥈", "p2-card", "P2"), ("🥉", "p3-card", "P3")]
-            
-            for i, (medal, card_cls, label) in enumerate(medals):
-                r = pred["top_10"][i]
-                color = team_color_hex(r["team"])
-                with p_cols[i]:
-                    st.markdown(f"""
-                    <div class="podium-card {card_cls}">
-                        <div style="font-size:1.8rem;">{medal}</div>
-                        <div class="driver-name">{r['driver'].split()[-1].upper()}</div>
-                        <div style="font-size:0.75rem;color:#888899;margin-top:2px;">{r['driver'].split()[0]}</div>
-                        <div style="margin-top:6px;">
-                            <span class="team-badge" style="background:{color}22;color:{color};border:1px solid {color}44;">
-                                {r['team']}
-                            </span>
-                        </div>
-                        <div style="margin-top:10px;font-family:Orbitron,monospace;font-size:1.4rem;color:#FFD700;">
-                            {r['win_prob']*100:.1f}<span style="font-size:0.6rem;color:#888899;">%</span>
-                        </div>
-                        <div style="font-size:0.65rem;color:#888899;letter-spacing:1px;">WIN PROBABILITY</div>
-                        <div class="win-prob-bar" style="width:{min(r['win_prob']*500,100):.0f}%;"></div>
-                    </div>
-                    """, unsafe_allow_html=True)
-            
-            st.markdown("")
+
+            # Build podium inline — no imports needed
+            _top3  = pred.get("top_10", [])[:3]
+            if len(_top3) >= 3:
+                _p1, _p2, _p3 = _top3[0], _top3[1], _top3[2]
+
+                # Team colors lookup
+                _TCOLORS = {
+                    "Mercedes": "#27F4D2", "Ferrari": "#E8002D",
+                    "McLaren": "#FF8000", "Red Bull": "#3671C6",
+                    "Aston Martin": "#229971", "Alpine": "#FF87BC",
+                    "Haas": "#B6BABD", "Racing Bulls": "#6692FF",
+                    "Williams": "#37BEDD", "Audi": "#888888",
+                    "Cadillac": "#FFFFFF",
+                }
+
+                # Driver images — load from local assets as base64 (avoids F1.com hotlink blocks)
+                _DRIVER_ASSETS_DIR = os.path.join(
+                    os.path.dirname(os.path.abspath(__file__)), "assets", "drivers"
+                )
+                def _d64(fname):
+                    try:
+                        import base64 as _b
+                        p = os.path.join(_DRIVER_ASSETS_DIR, fname)
+                        with open(p, "rb") as _f:
+                            return "data:image/avif;base64," + _b.b64encode(_f.read()).decode()
+                    except Exception:
+                        return ""
+
+                _DIMGS = {
+                    "Max Verstappen":   _d64("2026redbullracingmaxver01right.avif"),
+                    "Isack Hadjar":     _d64("2026redbullracingisahad01right.avif"),
+                    "Lando Norris":     _d64("2026mclarenlannor01right.avif"),
+                    "Oscar Piastri":    _d64("2026mclarenoscpia01right.avif"),
+                    "Charles Leclerc":  _d64("2026ferrarichalec01right.avif"),
+                    "Lewis Hamilton":   _d64("2026ferrarilewham01right.avif"),
+                    "George Russell":   _d64("Grussell.avif"),
+                    "Kimi Antonelli":   _d64("kimi.avif"),
+                    "Fernando Alonso":  _d64("2026astonmartinferalo01right.avif"),
+                    "Lance Stroll":     _d64("2026astonmartinlanstr01right.avif"),
+                    "Pierre Gasly":     _d64("2026alpinepiegas01right.avif"),
+                    "Franco Colapinto": _d64("2026alpinefracol01right.avif"),
+                    "Gabriel Bortoleto":_d64("2026audigabbor01right.avif"),
+                    "Nico Hulkenberg":  _d64("2026audinichul01right.avif"),
+                    "Sergio Perez":     _d64("2026cadillacserper01right.avif"),
+                    "Valtteri Bottas":  _d64("2026cadillacvalbot01right.avif"),
+                    "Esteban Ocon":     _d64("2026haasestoco01right.avif"),
+                    "Oliver Bearman":   _d64("2026haasolibea01right.avif"),
+                    "Liam Lawson":      _d64("2026racingbullslialaw01right.avif"),
+                    "Arvid Lindblad":   _d64("2026racingbullsarvlin01right.avif"),
+                    "Alexander Albon":  _d64("2026williamsalealb01right.avif"),
+                    "Carlos Sainz":     _d64("2026williamscarsai01right.avif"),
+                }
+
+                # Circuit track maps — Wikipedia SVG/PNG track layouts
+                _CIRCUIT_INFO = {
+                    "Australian Grand Prix":    {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Albert_Park_circuit_2020.png/800px-Albert_Park_circuit_2020.png",     "flag":"🇦🇺","turns":16,"length":"5.303","type":"Temporary Street","opened":1996},
+                    "Chinese Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shanghai_circuit.svg/800px-Shanghai_circuit.svg.png",                "flag":"🇨🇳","turns":16,"length":"5.451","type":"Permanent","opened":2004},
+                    "Japanese Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Suzuka_circuit_map.svg/800px-Suzuka_circuit_map.svg.png",            "flag":"🇯🇵","turns":18,"length":"5.807","type":"Permanent","opened":1987},
+                    "Bahrain Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Bahrain_International_Circuit--Grand_Prix_Layout.svg/800px-Bahrain_International_Circuit--Grand_Prix_Layout.svg.png", "flag":"🇧🇭","turns":15,"length":"5.412","type":"Permanent","opened":2004},
+                    "Saudi Arabian Grand Prix": {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jeddah_Corniche_Circuit.svg/800px-Jeddah_Corniche_Circuit.svg.png", "flag":"🇸🇦","turns":27,"length":"6.174","type":"Street","opened":2021},
+                    "Miami Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Miami_International_Autodrome_track_map.svg/800px-Miami_International_Autodrome_track_map.svg.png", "flag":"🇺🇸","turns":19,"length":"5.412","type":"Street","opened":2022},
+                    "Emilia Romagna Grand Prix":{"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Autodromo_Enzo_e_Dino_Ferrari_track_map.svg/800px-Autodromo_Enzo_e_Dino_Ferrari_track_map.svg.png", "flag":"🇮🇹","turns":19,"length":"4.909","type":"Permanent","opened":1980},
+                    "Monaco Grand Prix":        {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Monte_Carlo_Formula_1_track_map.svg/800px-Monte_Carlo_Formula_1_track_map.svg.png", "flag":"🇲🇨","turns":19,"length":"3.337","type":"Street","opened":1929},
+                    "Spanish Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Barcelona_circuit_map.svg/800px-Barcelona_circuit_map.svg.png",      "flag":"🇪🇸","turns":14,"length":"4.675","type":"Permanent","opened":1991},
+                    "Canadian Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gilles_Villeneuve_track_map.svg/800px-Gilles_Villeneuve_track_map.svg.png", "flag":"🇨🇦","turns":14,"length":"4.361","type":"Street","opened":1978},
+                    "Austrian Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Red_Bull_Ring_track_map.svg/800px-Red_Bull_Ring_track_map.svg.png", "flag":"🇦🇹","turns":10,"length":"4.318","type":"Permanent","opened":1970},
+                    "British Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Silverstone_circuit_2020.svg/800px-Silverstone_circuit_2020.svg.png","flag":"🇬🇧","turns":18,"length":"5.891","type":"Permanent","opened":1950},
+                    "Belgian Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Spa-Francorchamps_circuit_2020.svg/800px-Spa-Francorchamps_circuit_2020.svg.png", "flag":"🇧🇪","turns":19,"length":"7.004","type":"Permanent","opened":1950},
+                    "Hungarian Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hungaroring.svg/800px-Hungaroring.svg.png",                         "flag":"🇭🇺","turns":14,"length":"4.381","type":"Permanent","opened":1986},
+                    "Dutch Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Circuit_Zandvoort_track_map.svg/800px-Circuit_Zandvoort_track_map.svg.png", "flag":"🇳🇱","turns":14,"length":"4.259","type":"Permanent","opened":1952},
+                    "Italian Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Autodromo_Nazionale_Monza.svg/800px-Autodromo_Nazionale_Monza.svg.png", "flag":"🇮🇹","turns":11,"length":"5.793","type":"Permanent","opened":1922},
+                    "Azerbaijan Grand Prix":    {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Baku_City_Circuit_track_map.svg/800px-Baku_City_Circuit_track_map.svg.png", "flag":"🇦🇿","turns":20,"length":"6.003","type":"Street","opened":2016},
+                    "Singapore Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Marina_Bay_Street_Circuit_2023.svg/800px-Marina_Bay_Street_Circuit_2023.svg.png", "flag":"🇸🇬","turns":19,"length":"4.940","type":"Street","opened":2008},
+                    "United States Grand Prix": {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Austin_circuit_2012.svg/800px-Austin_circuit_2012.svg.png",          "flag":"🇺🇸","turns":20,"length":"5.513","type":"Permanent","opened":2012},
+                    "Mexico City Grand Prix":   {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Autodromo_Hermanos_Rodriguez_track_map.svg/800px-Autodromo_Hermanos_Rodriguez_track_map.svg.png", "flag":"🇲🇽","turns":17,"length":"4.304","type":"Permanent","opened":1963},
+                    "São Paulo Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Autodromo_Jose_Carlos_Pace_track_map.svg/800px-Autodromo_Jose_Carlos_Pace_track_map.svg.png", "flag":"🇧🇷","turns":15,"length":"4.309","type":"Permanent","opened":1973},
+                    "Las Vegas Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Las_Vegas_Street_Circuit.svg/800px-Las_Vegas_Street_Circuit.svg.png","flag":"🇺🇸","turns":17,"length":"6.120","type":"Street","opened":2023},
+                    "Qatar Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Losail_International_Circuit_track_map.svg/800px-Losail_International_Circuit_track_map.svg.png", "flag":"🇶🇦","turns":16,"length":"5.380","type":"Permanent","opened":2004},
+                    "Abu Dhabi Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Yas_Marina_Circuit_2021.svg/800px-Yas_Marina_Circuit_2021.svg.png",  "flag":"🇦🇪","turns":16,"length":"5.281","type":"Permanent","opened":2009},
+                }
+                _ci   = _CIRCUIT_INFO.get(circuit, {"bg":"","flag":"🏁","turns":15,"length":"5.0","type":"Permanent","opened":2000})
+                _bg   = _ci["bg"]
+                _flag = _ci["flag"]
+                _turns= _ci["turns"]
+                _len  = _ci["length"]
+                _ctype= _ci["type"]
+                _yr   = _ci["opened"]
+                _laps = 55
+                _dist = 305
+                _circ_short = circuit.replace(" Grand Prix","").upper()
+
+                def _pcard(r, medal_color, pos_label, height, delay):
+                    _d   = r["driver"]
+                    _t   = r["team"]
+                    _tc  = _TCOLORS.get(_t, "#888888")
+                    _img = _DIMGS.get(_d, "")
+                    _fn  = _d.split()[0][0] + ". " if len(_d.split()) > 1 else ""
+                    _ln  = _d.split()[-1].upper()
+                    _abr = (_d.split()[0][0] + _d.split()[-1][:2]).upper()
+                    _wp  = r["win_prob"] * 100
+                    _pp  = r["podium_prob"] * 100
+                    _q   = r.get("qualifying_position", "?")
+                    _bw  = min(_wp * 2, 100)
+                    _bp  = min(_pp, 100)
+                    _mg  = {
+                        "#FFD700": "linear-gradient(135deg,#FFD700,#FFA500)",
+                        "#C0C0C0": "linear-gradient(135deg,#C0C0C0,#A8A8A8)",
+                        "#CD7F32": "linear-gradient(135deg,#CD7F32,#A0522D)",
+                    }.get(medal_color, "linear-gradient(135deg," + medal_color + "," + medal_color + "88)")
+                    _pn  = pos_label[1]  # "1", "2", "3"
+
+                    # Build img tag separately to avoid f-string quote conflicts
+                    if _img:
+                        _img_tag = '<img src="' + _img + '" style="width:100%;height:100%;object-fit:cover;object-position:top;" />'
+                    else:
+                        _img_tag = '<div style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;color:' + _tc + ';">' + _abr + '</div>'
+
+                    return (
+                        '<div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;flex:1;max-width:240px;animation:podiumRise 0.7s ease ' + str(delay) + 's both;">'
+                        '<div style="background:linear-gradient(160deg,rgba(14,14,24,0.97),rgba(8,8,16,0.99));border:1px solid ' + _tc + '44;border-radius:16px;padding:16px 12px 12px;width:100%;text-align:center;position:relative;overflow:hidden;box-shadow:0 8px 40px ' + _tc + '22,0 20px 50px rgba(0,0,0,0.7);margin-bottom:8px;">'
+                        '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:' + _mg + ';"></div>'
+                        '<div style="position:absolute;top:10px;left:12px;font-family:Orbitron,monospace;font-size:0.6rem;font-weight:900;color:' + medal_color + ';">' + pos_label + '</div>'
+                        '<div style="width:84px;height:84px;border-radius:50%;margin:22px auto 10px;overflow:hidden;border:3px solid ' + _tc + '66;box-shadow:0 0 20px ' + _tc + '44;background:#0A0A14;">'
+                        + _img_tag +
+                        '</div>'
+                        '<div style="font-family:Orbitron,monospace;font-size:0.7rem;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;margin-bottom:3px;">' + _fn + _ln + '</div>'
+                        '<div style="font-size:0.62rem;color:' + _tc + ';letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">' + _t + '</div>'
+                        '<div style="margin-bottom:5px;">'
+                        '<div style="display:flex;justify-content:space-between;margin-bottom:2px;">'
+                        '<span style="font-size:0.55rem;color:#444460;letter-spacing:1px;">WIN</span>'
+                        '<span style="font-family:Orbitron,monospace;font-size:0.6rem;color:' + medal_color + ';">' + f"{_wp:.1f}%" + '</span>'
+                        '</div>'
+                        '<div style="height:3px;background:#0A0A14;border-radius:2px;">'
+                        '<div style="width:' + f"{_bw:.0f}" + '%;height:100%;background:' + _mg + ';border-radius:2px;"></div>'
+                        '</div></div>'
+                        '<div>'
+                        '<div style="display:flex;justify-content:space-between;margin-bottom:2px;">'
+                        '<span style="font-size:0.55rem;color:#444460;letter-spacing:1px;">PODIUM</span>'
+                        '<span style="font-family:Orbitron,monospace;font-size:0.6rem;color:' + _tc + ';">' + f"{_pp:.1f}%" + '</span>'
+                        '</div>'
+                        '<div style="height:3px;background:#0A0A14;border-radius:2px;">'
+                        '<div style="width:' + f"{_bp:.0f}" + '%;height:100%;background:' + _tc + '88;border-radius:2px;"></div>'
+                        '</div></div>'
+                        '<div style="margin-top:8px;padding-top:6px;border-top:1px solid #12121E;font-size:0.58rem;color:#444460;letter-spacing:1px;">QUAL P' + str(_q) + '</div>'
+                        '</div>'
+                        '<div style="width:100%;height:' + str(height) + 'px;background:linear-gradient(180deg,' + _tc + '22,' + _tc + '08);border:1px solid ' + _tc + '33;border-bottom:none;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;">'
+                        '<div style="font-family:Orbitron,monospace;font-size:2rem;font-weight:900;color:' + medal_color + ';">' + _pn + '</div>'
+                        '</div>'
+                        '</div>'
+                    )
+
+                _c1 = _pcard(_p1, "#FFD700", "P1", 120, 0.1)
+                _c2 = _pcard(_p2, "#C0C0C0", "P2", 80,  0.3)
+                _c3 = _pcard(_p3, "#CD7F32", "P3", 60,  0.5)
+
+                # Circuit info bar at bottom
+                _circ_bar = (
+                    '<div style="position:relative;z-index:2;'
+                    'background:linear-gradient(90deg,rgba(6,6,12,0.98),rgba(12,12,20,0.95));'
+                    'border-top:1px solid #1A1A2A;padding:16px 24px;margin-top:16px;">'
+                    '<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">'
+
+                    # Left — flag + circuit name
+                    '<div style="display:flex;align-items:center;gap:12px;">'
+                    '<div style="font-size:2rem;">' + _flag + '</div>'
+                    '<div>'
+                    '<div style="font-family:Orbitron,monospace;font-size:0.85rem;font-weight:700;color:#FFFFFF;">' + _circ_short + '</div>'
+                    '<div style="font-size:0.65rem;color:#555575;margin-top:2px;">' + _ctype + ' · Since ' + str(_yr) + '</div>'
+                    '</div>'
+                    '</div>'
+
+                    # Right — stats
+                    '<div style="display:flex;gap:20px;flex-wrap:wrap;">'
+
+                    '<div style="text-align:center;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:#E8002D;">' + str(_laps) + '</div>'
+                    '<div style="font-size:0.58rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Laps</div>'
+                    '</div>'
+
+                    '<div style="text-align:center;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:#E8002D;">' + str(_len) + '</div>'
+                    '<div style="font-size:0.58rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">KM / Lap</div>'
+                    '</div>'
+
+                    '<div style="text-align:center;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:#E8002D;">' + str(_turns) + '</div>'
+                    '<div style="font-size:0.58rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Turns</div>'
+                    '</div>'
+
+                    '<div style="text-align:center;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:#E8002D;">' + str(_dist) + '</div>'
+                    '<div style="font-size:0.58rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Total KM</div>'
+                    '</div>'
+
+                    '</div>'
+                    '</div>'
+                    '</div>'
+                )
+
+                # ── Cinematic broadcast podium via podium.py ──
+                import importlib.util as _ilu_, os as _op_
+                _pspec_ = _ilu_.spec_from_file_location(
+                    "podium",
+                    _op_.path.join(_op_.path.dirname(_op_.path.abspath(__file__)), "podium.py")
+                )
+                _pmod_ = _ilu_.module_from_spec(_pspec_)
+                _pspec_.loader.exec_module(_pmod_)
+                _podium_html_ = _pmod_.render_podium(pred, circuit, weather)
+                if _podium_html_:
+                    st.components.v1.html(_podium_html_, height=960, scrolling=False)
             
             # ─── Top 10 Table + Underdogs ───
             c_left, c_right = st.columns([3, 1])
@@ -511,17 +702,312 @@ if "Race Predictor" in nav:
                 else:
                     st.markdown('<div style="color:#888899;font-size:0.85rem;font-family:Inter,sans-serif;">No major upsets predicted for this race.</div>', unsafe_allow_html=True)
                 
-                # Circuit info
+                # ── LUXURY CIRCUIT CARD ──────────────────────────────
                 cinfo = get_circuit_info(circuit)
-                st.markdown('<div class="section-title">🗺️ Circuit</div>', unsafe_allow_html=True)
+                try:
+                    from src.circuit_data import get_circuit_data
+                    from src.f1_assets import get_circuit_bg
+                    cdata = get_circuit_data(circuit)
+                except Exception:
+                    cdata = {}
+                    get_circuit_bg = lambda _circuit: ""
+
+                color     = cdata.get("color", "#E8002D")
+                country   = cdata.get("country", "🏁")
+                img_url   = cdata.get("image_url", "")
+                map_url   = cdata.get("map_url", "")
+                desc      = cdata.get("description", "")
+                record    = cdata.get("lap_record", "N/A")
+                tire_info = cdata.get("tire_info", "")
+                facts     = cdata.get("facts", [])
+                circ_name = cdata.get("circuit_name", circuit)
+                location  = cdata.get("location", "")
+                most_wins = cdata.get("most_wins", "")
+                drs       = cdata.get("drs_zones", 2)
+                first_gp  = cdata.get("first_gp", "")
+
+                # Prefer local asset (base64) → fallback to remote URL
+                hero_img_url = ""
+                try:
+                    import base64 as _b64
+                    from src.circuit_data import get_circuit_local_img
+                    _fname = get_circuit_local_img(circuit)
+                    if _fname:
+                        _fpath = os.path.join(
+                            os.path.dirname(os.path.abspath(__file__)),
+                            "assets", "circuits", _fname
+                        )
+                        if os.path.isfile(_fpath):
+                            _ext = _fname.rsplit(".", 1)[-1]
+                            with open(_fpath, "rb") as _f:
+                                _b64str = _b64.b64encode(_f.read()).decode()
+                            hero_img_url = f"data:image/{_ext};base64,{_b64str}"
+                except Exception:
+                    pass
+                if not hero_img_url:
+                    hero_img_url = img_url or map_url or get_circuit_bg(circuit)
+
+                hero_img_html = ""
+                if hero_img_url:
+                    hero_img_html = (
+                        "<img class='circuit-hero-img' "
+                        f"src='{hero_img_url}' "
+                        + "/>"
+                    )
+
                 st.markdown(f"""
-                <div class="metric-card">
-                  <div style="font-size:0.75rem;color:#888899;text-transform:uppercase;letter-spacing:1px;">{circuit.replace(' Grand Prix','')}</div>
-                  <div style="font-size:0.8rem;color:#E8E8F0;margin-top:8px;">🔄 {cinfo['laps']} laps</div>
-                  <div style="font-size:0.8rem;color:#E8E8F0;">📏 {cinfo['distance_km']} km</div>
-                  <div style="font-size:0.8rem;color:#E8E8F0;">🏟️ {cinfo['type']}</div>
-                  <div style="font-size:0.8rem;color:#E8E8F0;">⚡ Overtaking: {cinfo['overtaking']}</div>
+                <style>
+                @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@300;400;600&display=swap');
+
+                .circuit-hero {{
+                    position: relative;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                    background: #06060A;
+                    border: 1px solid {color}55;
+                    box-shadow: 0 0 40px {color}22, 0 20px 60px rgba(0,0,0,0.8);
+                }}
+
+                .circuit-hero-img {{
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    display: block;
+                    opacity: 0.7;
+                    transition: opacity 0.3s;
+                }}
+
+                .circuit-hero-img:hover {{ opacity: 0.9; }}
+
+                .circuit-overlay {{
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                        180deg,
+                        transparent 0%,
+                        transparent 30%,
+                        rgba(6,6,10,0.7) 60%,
+                        rgba(6,6,10,0.98) 100%
+                    );
+                }}
+
+                .circuit-badge {{
+                    position: absolute;
+                    top: 14px;
+                    right: 14px;
+                    background: {color};
+                    color: white;
+                    font-family: 'Orbitron', monospace;
+                    font-size: 0.6rem;
+                    letter-spacing: 2px;
+                    padding: 4px 10px;
+                    border-radius: 20px;
+                    font-weight: 700;
+                }}
+
+                .circuit-title-block {{
+                    position: absolute;
+                    bottom: 16px;
+                    left: 18px;
+                    right: 18px;
+                }}
+
+                .circuit-country-name {{
+                    font-family: 'Orbitron', monospace;
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                    color: #FFFFFF;
+                    letter-spacing: -0.5px;
+                    line-height: 1.1;
+                    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+                }}
+
+                .circuit-subtitle {{
+                    font-family: 'Syne', sans-serif;
+                    font-size: 0.72rem;
+                    color: {color};
+                    margin-top: 3px;
+                    letter-spacing: 0.5px;
+                }}
+
+                .circuit-stats-row {{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 6px;
+                    margin-bottom: 8px;
+                }}
+
+                .circuit-stat {{
+                    background: linear-gradient(135deg, #0E0E18, #0A0A12);
+                    border: 1px solid #1E1E30;
+                    border-radius: 10px;
+                    padding: 12px 8px;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                    transition: border-color 0.2s;
+                }}
+
+                .circuit-stat::before {{
+                    content: '';
+                    position: absolute;
+                    top: 0; left: 0; right: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, {color}, transparent);
+                }}
+
+                .circuit-stat:hover {{ border-color: {color}88; }}
+
+                .stat-value {{
+                    font-family: 'Orbitron', monospace;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    color: {color};
+                    line-height: 1;
+                }}
+
+                .stat-label {{
+                    font-family: 'Syne', sans-serif;
+                    font-size: 0.58rem;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: #555570;
+                    margin-top: 5px;
+                }}
+
+                .circuit-info-card {{
+                    background: linear-gradient(135deg, #0A0A12, #080810);
+                    border: 1px solid #1A1A2A;
+                    border-radius: 12px;
+                    padding: 14px 16px;
+                    margin-bottom: 8px;
+                    position: relative;
+                    overflow: hidden;
+                }}
+
+                .circuit-info-card::after {{
+                    content: '';
+                    position: absolute;
+                    bottom: 0; left: 0; right: 0;
+                    height: 1px;
+                    background: linear-gradient(90deg, {color}44, transparent);
+                }}
+
+                .info-card-label {{
+                    font-family: 'Orbitron', monospace;
+                    font-size: 0.58rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: #444460;
+                    margin-bottom: 6px;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                }}
+
+                .info-card-label::before {{
+                    content: '';
+                    display: inline-block;
+                    width: 16px;
+                    height: 1px;
+                    background: {color};
+                }}
+
+                .info-card-value {{
+                    font-family: 'Syne', sans-serif;
+                    font-size: 0.82rem;
+                    color: #D0D0E8;
+                    line-height: 1.6;
+                }}
+
+                .record-value {{
+                    font-family: 'Orbitron', monospace;
+                    font-size: 0.85rem;
+                    color: #FFD700;
+                    font-weight: 700;
+                }}
+
+                .fact-item {{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                    padding: 7px 0;
+                    border-bottom: 1px solid #10101A;
+                    font-family: 'Syne', sans-serif;
+                    font-size: 0.78rem;
+                    color: #AAAACC;
+                    line-height: 1.4;
+                }}
+
+                .fact-item:last-child {{ border-bottom: none; }}
+
+                .fact-dot {{
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: {color};
+                    flex-shrink: 0;
+                    margin-top: 5px;
+                }}
+
+                .circuit-desc {{
+                    font-family: 'Syne', sans-serif;
+                    font-size: 0.8rem;
+                    color: #7777AA;
+                    line-height: 1.7;
+                    padding: 12px 0 4px;
+                    border-top: 1px solid #12121E;
+                    margin-top: 8px;
+                    font-style: italic;
+                }}
+                </style>
+
+                <!-- HERO IMAGE CARD -->
+                <div class="circuit-hero">
+                    {hero_img_html}
+                    <div class="circuit-overlay"></div>
+                    <div class="circuit-badge">{country} ROUND {cdata.get('first_gp','')}</div>
+                    <div class="circuit-title-block">
+                        <div class="circuit-country-name">{circuit.replace(' Grand Prix','').upper()}</div>
+                        <div class="circuit-subtitle">{circ_name} · {location}</div>
+                    </div>
                 </div>
+
+                <!-- STATS ROW -->
+                <div class="circuit-stats-row">
+                    <div class="circuit-stat">
+                        <div class="stat-value">{cinfo['laps']}</div>
+                        <div class="stat-label">Laps</div>
+                    </div>
+                    <div class="circuit-stat">
+                        <div class="stat-value">{cinfo['distance_km']}</div>
+                        <div class="stat-label">KM</div>
+                    </div>
+                    <div class="circuit-stat">
+                        <div class="stat-value">{drs}</div>
+                        <div class="stat-label">DRS</div>
+                    </div>
+                    <div class="circuit-stat">
+                        <div class="stat-value" style="font-size:0.75rem;">{cinfo['overtaking']}</div>
+                        <div class="stat-label">OVT</div>
+                    </div>
+                </div>
+
+                <!-- LAP RECORD -->
+                {"<div class='circuit-info-card'><div class='info-card-label'>⏱ Lap Record</div><div class='record-value'>" + record + "</div></div>" if record and record != "N/A" else ""}
+
+                <!-- TIRE STRATEGY -->
+                {"<div class='circuit-info-card'><div class='info-card-label'>🔴 Tire Strategy</div><div class='info-card-value'>" + tire_info + "</div></div>" if tire_info else ""}
+
+                <!-- MOST WINS -->
+                {"<div class='circuit-info-card'><div class='info-card-label'>🏆 Most Wins</div><div class='info-card-value'>" + most_wins + "</div></div>" if most_wins else ""}
+
+                <!-- CIRCUIT FACTS -->
+                {"<div class='circuit-info-card'><div class='info-card-label'>📋 Circuit Facts</div>" + "".join([f"<div class='fact-item'><div class='fact-dot'></div>{f}</div>" for f in facts[:4]]) + "</div>" if facts else ""}
+
+                <!-- DESCRIPTION -->
+                {"<div class='circuit-desc'>" + desc + "</div>" if desc else ""}
                 """, unsafe_allow_html=True)
             
             # ─── LLM Reasoning Section ───
@@ -543,7 +1029,8 @@ if "Race Predictor" in nav:
                     reasoning = None
 
             if reasoning:
-                conf_level  = reasoning.get("confidence_level", "MEDIUM")
+                # ── Confidence Badge ──
+                conf_level = reasoning.get("confidence_level", "MEDIUM")
                 conf_colors = {"HIGH": "#27F4D2", "MEDIUM": "#FFD700", "LOW": "#FF8844"}
                 conf_color  = conf_colors.get(conf_level, "#888899")
 
@@ -560,11 +1047,13 @@ if "Race Predictor" in nav:
                 </div>
                 """, unsafe_allow_html=True)
 
+                # ── 4 Analysis Cards ──
                 a1, a2 = st.columns(2)
-                for (icon, title, text, color, col) in [
+                analysis_cards = [
                     ("📖", "Race Preview",    reasoning.get("race_preview",""),    "#3671C6", a1),
-                    ("🏆", "Winner Analysis", reasoning.get("winner_reasoning",""),"#E8002D", a2),
-                ]:
+                    ("🏆", "Winner Analysis", reasoning.get("winner_reasoning",""), "#E8002D", a2),
+                ]
+                for icon, title, text, color, col in analysis_cards:
                     with col:
                         st.markdown(f"""
                         <div class="explanation-box" style="border-left-color:{color};min-height:90px;">
@@ -573,16 +1062,19 @@ if "Race Predictor" in nav:
                             {icon} {title.upper()}
                           </div>
                           <div style="font-family:Inter,sans-serif;font-size:0.85rem;
-                                      color:#CCCCDD;line-height:1.6;">{text}</div>
+                                      color:#CCCCDD;line-height:1.6;">
+                            {text}
+                          </div>
                         </div>
                         """, unsafe_allow_html=True)
 
                 b1, b2, b3 = st.columns(3)
-                for (icon, title, text, color, col) in [
+                cards2 = [
                     ("🔧", "Strategy",    reasoning.get("strategy_insight",""), "#229971", b1),
                     ("⚡", "Dark Horses", reasoning.get("dark_horses",""),      "#FF8000", b2),
                     ("⚠️", "Risk Factors",reasoning.get("risk_factors",""),     "#FF87BC", b3),
-                ]:
+                ]
+                for icon, title, text, color, col in cards2:
                     with col:
                         st.markdown(f"""
                         <div class="explanation-box" style="border-left-color:{color};min-height:80px;">
@@ -591,10 +1083,13 @@ if "Race Predictor" in nav:
                             {icon} {title.upper()}
                           </div>
                           <div style="font-family:Inter,sans-serif;font-size:0.82rem;
-                                      color:#CCCCDD;line-height:1.6;">{text}</div>
+                                      color:#CCCCDD;line-height:1.6;">
+                            {text}
+                          </div>
                         </div>
                         """, unsafe_allow_html=True)
 
+                # ── Per-driver Summaries ──
                 driver_summaries = reasoning.get("driver_summaries", {})
                 if driver_summaries:
                     st.markdown('<div class="section-title">👤 Driver-by-Driver Analysis</div>', unsafe_allow_html=True)
@@ -605,28 +1100,82 @@ if "Race Predictor" in nav:
                         rank   = r_data["predicted_rank"] if r_data else "?"
                         with d_cols[idx % 2]:
                             st.markdown(f"""
-                            <div class="explanation-box" style="border-left-color:{color};padding:10px 14px;margin:4px 0;">
-                              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                                <span style="font-family:Orbitron,monospace;font-size:0.8rem;color:{color};">{driver}</span>
-                                <span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFD700;">P{rank}</span>
+                            <div class="explanation-box" style="border-left-color:{color};
+                                         padding:10px 14px;margin:4px 0;">
+                              <div style="display:flex;justify-content:space-between;
+                                          align-items:center;margin-bottom:4px;">
+                                <span style="font-family:Orbitron,monospace;font-size:0.8rem;
+                                             color:{color};">{driver}</span>
+                                <span style="font-family:Orbitron,monospace;font-size:0.75rem;
+                                             color:#FFD700;">P{rank}</span>
                               </div>
-                              <div style="font-family:Inter,sans-serif;font-size:0.8rem;color:#BBBBCC;line-height:1.5;">{summary}</div>
+                              <div style="font-family:Inter,sans-serif;font-size:0.8rem;
+                                          color:#BBBBCC;line-height:1.5;">
+                                {summary}
+                              </div>
                             </div>
                             """, unsafe_allow_html=True)
 
-                st.markdown('<div class="section-title">📸 Caption Generator</div>', unsafe_allow_html=True)
-                platform = st.selectbox("PLATFORM", ["instagram", "twitter", "linkedin"], key="caption_platform")
+                # ── Instagram Caption Generator ──
+                st.markdown('<div class="section-title">📸 Instagram Caption</div>', unsafe_allow_html=True)
+
+                platform = st.selectbox(
+                    "PLATFORM",
+                    ["instagram", "twitter", "linkedin"],
+                    key="caption_platform"
+                )
+
                 if st.button("✨  GENERATE CAPTION", key="gen_caption"):
                     with st.spinner("Writing caption..."):
                         try:
-                            caption = reasoner.generate_race_preview_post(circuit=circuit, prediction=pred, weather=weather, platform=platform)
+                            caption = reasoner.generate_race_preview_post(
+                                circuit=circuit,
+                                prediction=pred,
+                                weather=weather,
+                                platform=platform,
+                            )
                             st.session_state["last_caption"] = caption
                         except Exception as e:
-                            st.error(f"Caption failed: {e}")
+                            st.error(f"Caption generation failed: {e}")
 
                 if st.session_state.get("last_caption"):
+                    st.markdown(f"""
+                    <div style="background:#0D1520;border:1px solid #3671C6;border-radius:8px;
+                                padding:16px 20px;font-family:Inter,sans-serif;font-size:0.88rem;
+                                color:#E8E8F0;line-height:1.8;white-space:pre-wrap;">
+{st.session_state['last_caption']}
+                    </div>
+                    """, unsafe_allow_html=True)
                     st.code(st.session_state["last_caption"], language=None)
-                    st.caption("👆 Click copy icon top-right to copy")
+                    st.caption("👆 Click the copy icon top-right of the code block to copy")
+
+            else:
+                # Fallback to original basic explanation
+                exp_cols = st.columns(2)
+                exp_items = [(d, v) for d, v in pred["explanations"].items()][:4]
+                for idx, (driver, exp) in enumerate(exp_items):
+                    with exp_cols[idx % 2]:
+                        r_data = next((r for r in pred["top_10"] if r["driver"] == driver), None)
+                        if not r_data:
+                            continue
+                        color = team_color_hex(r_data["team"])
+                        factors = exp.get("factors", [])
+                        if not factors:
+                            pos_f = exp.get("positive_factors", [])
+                            factors = [f[0].replace('_',' ').title() for f in pos_f[:4]]
+                        factor_html = "".join([f'<div style="margin:3px 0;">• {f}</div>' for f in factors[:4]])
+                        st.markdown(f"""
+                        <div class="explanation-box" style="border-left-color:{color};">
+                          <div style="font-family:Orbitron,monospace;font-size:0.85rem;
+                                      color:{color};margin-bottom:6px;">
+                            {driver} — P{r_data['predicted_rank']} Predicted
+                          </div>
+                          <div style="font-family:Inter,sans-serif;font-size:0.8rem;
+                                      color:#BBBBCC;line-height:1.7;">
+                            {factor_html}
+                          </div>
+                        </div>
+                        """, unsafe_allow_html=True)
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -896,91 +1445,230 @@ elif "Driver Profile" in nav:
 
 
 # ═══════════════════════════════════════════════════════════════════
-# PAGE: CRM DATA ENTRY
+# PAGE: CRM DATA ENTRY — SMART UNIVERSAL INGESTION
 # ═══════════════════════════════════════════════════════════════════
 elif "CRM" in nav:
-    st.markdown('<div class="pitwall-header" style="font-size:1.8rem;">CRM Data Entry</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header" style="margin-bottom:24px;">Insert Race Results & Update Dataset</div>', unsafe_allow_html=True)
-    
-    tab_manual, tab_csv = st.tabs(["MANUAL ENTRY", "CSV UPLOAD"])
-    
+    import sys as _sys
+    _sys.path.insert(0, BASE_DIR)
+    from src.smart_ingest import smart_parse, preview_parsed, normalize_df
+
+    st.markdown('<div class="pitwall-header" style="font-size:1.8rem;">Data Ingestion</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header" style="margin-bottom:24px;">Upload Race Data in Any Format</div>', unsafe_allow_html=True)
+
+    # Format badges
+    st.markdown("""
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">📊 CSV</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">📗 EXCEL</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">🔷 JSON</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">📄 PDF</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">🖼️ IMAGE</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">📋 TEXT</span>
+      <span style="background:#1A2A1A;border:1px solid #27F4D2;color:#27F4D2;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-family:Orbitron,monospace;">✏️ MANUAL</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+    tab_upload, tab_paste, tab_manual = st.tabs(["📁  FILE UPLOAD", "📋  PASTE / TEXT", "✏️  MANUAL ENTRY"])
+
+    # ── TAB 1: FILE UPLOAD ────────────────────────────────────────
+    with tab_upload:
+        st.markdown("""
+        <div class="explanation-box">
+        Drop <strong>any file</strong> — the system auto-detects format and extracts race data.<br>
+        <span style="color:#888899;">CSV · Excel (.xlsx/.xls) · JSON · PDF · Screenshot/Photo (.png/.jpg) · Text (.txt)</span><br><br>
+        <strong>Columns can be messy</strong> — it handles: <code>pos, position, grid, constructor, pilot, pts</code>, etc.<br>
+        <strong>Driver names</strong> can be abbreviations: <code>RUS, NOR, HAM, VER</code> — all auto-expanded.<br>
+        <strong>Teams</strong> auto-filled from driver name if missing.
+        </div>
+        """, unsafe_allow_html=True)
+
+        uploaded = st.file_uploader(
+            "DROP FILE HERE",
+            type=["csv","xlsx","xls","json","pdf","png","jpg","jpeg","txt","webp"],
+            help="CSV, Excel, JSON, PDF, screenshot, or plain text"
+        )
+
+        col_ctx1, col_ctx2, col_ctx3 = st.columns(3)
+        with col_ctx1:
+            up_circuit = st.selectbox("CIRCUIT (if not in file)", ["— auto-detect —"] + CIRCUITS_2026, key="up_circ")
+        with col_ctx2:
+            up_season = st.number_input("SEASON", min_value=2020, max_value=2030, value=2026, key="up_season")
+        with col_ctx3:
+            up_round = st.number_input("ROUND #", min_value=1, max_value=25, value=2, key="up_round")
+
+        up_retrain = st.checkbox("Auto-retrain models after ingestion", value=False, key="up_retrain")
+
+        if uploaded:
+            with st.spinner(f"🔍 Parsing {uploaded.name}..."):
+                try:
+                    df_parsed, fmt_detected, parse_warnings = smart_parse(uploaded)
+
+                    # Apply context overrides
+                    if up_circuit != "— auto-detect —":
+                        df_parsed["circuit"] = up_circuit
+                        df_parsed["location"] = up_circuit.replace(" Grand Prix","").strip()
+                    df_parsed["season"] = int(up_season)
+                    df_parsed["round"]  = int(up_round)
+
+                    st.markdown(f'<div class="success-banner">✅ Parsed {len(df_parsed)} rows &nbsp;|&nbsp; Format: <strong>{fmt_detected.upper()}</strong></div>', unsafe_allow_html=True)
+
+                    for w in parse_warnings:
+                        st.markdown(f'<div class="error-banner">{w}</div>', unsafe_allow_html=True)
+
+                    st.markdown('<div class="section-title">👁️ Preview — edit before saving</div>', unsafe_allow_html=True)
+                    preview = preview_parsed(df_parsed)
+                    edited = st.data_editor(preview, use_container_width=True, num_rows="dynamic", key="file_editor")
+
+                    if st.button("💾  CONFIRM & SAVE TO DATASET", key="save_file"):
+                        for col in edited.columns:
+                            df_parsed[col] = edited[col].values
+                        df_final = normalize_df(df_parsed)
+
+                        raw_path   = os.path.join(BASE_DIR, "data", "raw_race_data.csv")
+                        clean_path = os.path.join(BASE_DIR, "data", "cleaned_race_data.csv")
+                        existing = pd.read_csv(raw_path) if os.path.exists(raw_path) else pd.DataFrame()
+                        pd.concat([existing, df_final], ignore_index=True).to_csv(raw_path, index=False)
+
+                        from src.data_cleaner import clean_dataset
+                        clean_df = clean_dataset(raw_path, clean_path)
+                        st.markdown(f'<div class="success-banner">✅ {len(df_final)} rows saved → dataset now has {len(clean_df)} total rows</div>', unsafe_allow_html=True)
+                        st.cache_data.clear()
+
+                        if up_retrain:
+                            with st.spinner("🔄 Retraining models..."):
+                                try:
+                                    from src.train_model import train_pipeline
+                                    train_pipeline(clean_path)
+                                    st.markdown('<div class="success-banner">🏁 Models retrained successfully</div>', unsafe_allow_html=True)
+                                except Exception as e:
+                                    st.error(f"Retraining failed: {e}")
+
+                except RuntimeError as e:
+                    st.markdown(f'<div class="error-banner">⚠️ {e}</div>', unsafe_allow_html=True)
+                    st.info("💡 Copy the text from the image and paste it in the **PASTE / TEXT** tab instead.")
+                except Exception as e:
+                    st.markdown(f'<div class="error-banner">❌ Parse failed: {e}</div>', unsafe_allow_html=True)
+                    st.info("💡 Try the **Paste / Text** tab or **Manual Entry** tab.")
+
+    # ── TAB 2: PASTE / TEXT ───────────────────────────────────────
+    with tab_paste:
+        st.markdown("""
+        <div class="explanation-box">
+        Paste data from <strong>anywhere</strong> — X/Twitter, F1 website, Wikipedia, WhatsApp, email.<br>
+        Works with any format including:<br>
+        <code style="font-size:0.8rem;">1. George Russell — Mercedes (+2.9s)</code><br>
+        <code style="font-size:0.8rem;">P1 RUS MER 25pts</code><br>
+        <code style="font-size:0.8rem;">1,Russell,Mercedes,25</code><br>
+        <code style="font-size:0.8rem;">1&#9;Hamilton&#9;Ferrari&#9;18</code>
+        </div>
+        """, unsafe_allow_html=True)
+
+        paste_text = st.text_area(
+            "PASTE RACE DATA HERE",
+            height=220,
+            placeholder="Examples:\n1. George Russell (Mercedes) 25pts\n2. Kimi Antonelli (Mercedes) 18pts\n3. Charles Leclerc (Ferrari) 15pts\n\nOR:\n1,RUS,Mercedes,25\n2,ANT,Mercedes,18\n3,LEC,Ferrari,15",
+            key="paste_area"
+        )
+
+        p_col1, p_col2, p_col3 = st.columns(3)
+        with p_col1:
+            paste_circuit = st.selectbox("CIRCUIT", ["— auto-detect —"] + CIRCUITS_2026, key="p_circ")
+        with p_col2:
+            paste_season = st.number_input("SEASON", value=2026, key="p_season")
+        with p_col3:
+            paste_round = st.number_input("ROUND #", value=2, key="p_round")
+
+        paste_retrain = st.checkbox("Auto-retrain after save", key="p_retrain")
+
+        if st.button("🔍  PARSE TEXT", key="parse_text_btn") and paste_text:
+            try:
+                df_p, fmt_p, warns_p = smart_parse(("pasted_data.txt", paste_text.encode("utf-8")))
+                if paste_circuit != "— auto-detect —":
+                    df_p["circuit"] = paste_circuit
+                    df_p["location"] = paste_circuit.replace(" Grand Prix","").strip()
+                df_p["season"] = int(paste_season)
+                df_p["round"]  = int(paste_round)
+
+                st.markdown(f'<div class="success-banner">✅ Parsed {len(df_p)} rows from pasted text</div>', unsafe_allow_html=True)
+                for w in warns_p:
+                    st.markdown(f'<div class="error-banner">{w}</div>', unsafe_allow_html=True)
+
+                edited_p = st.data_editor(preview_parsed(df_p), use_container_width=True, num_rows="dynamic", key="paste_editor")
+
+                if st.button("💾  SAVE PARSED DATA", key="save_paste"):
+                    for col in edited_p.columns:
+                        df_p[col] = edited_p[col].values
+                    df_p = normalize_df(df_p)
+                    raw_path   = os.path.join(BASE_DIR, "data", "raw_race_data.csv")
+                    clean_path = os.path.join(BASE_DIR, "data", "cleaned_race_data.csv")
+                    existing = pd.read_csv(raw_path) if os.path.exists(raw_path) else pd.DataFrame()
+                    pd.concat([existing, df_p], ignore_index=True).to_csv(raw_path, index=False)
+                    from src.data_cleaner import clean_dataset
+                    clean_df = clean_dataset(raw_path, clean_path)
+                    st.markdown(f'<div class="success-banner">✅ {len(df_p)} rows saved → {len(clean_df)} total</div>', unsafe_allow_html=True)
+                    st.cache_data.clear()
+                    if paste_retrain:
+                        from src.train_model import train_pipeline
+                        train_pipeline(clean_path)
+                        st.markdown('<div class="success-banner">🏁 Models retrained</div>', unsafe_allow_html=True)
+            except Exception as e:
+                st.markdown(f'<div class="error-banner">❌ {e}</div>', unsafe_allow_html=True)
+
+    # ── TAB 3: MANUAL ENTRY ───────────────────────────────────────
     with tab_manual:
-        st.markdown('<div class="section-title">Enter Race Result</div>', unsafe_allow_html=True)
-        
+        st.markdown('<div class="section-title">Single Driver Entry</div>', unsafe_allow_html=True)
         r1, r2, r3 = st.columns(3)
         with r1:
-            form_season = st.number_input("SEASON", min_value=2020, max_value=2030, value=2026)
-            form_round = st.number_input("ROUND", min_value=1, max_value=25, value=1)
+            form_season  = st.number_input("SEASON", min_value=2020, max_value=2030, value=2026)
+            form_round   = st.number_input("ROUND", min_value=1, max_value=25, value=2)
             form_circuit = st.selectbox("CIRCUIT", CIRCUITS_2026)
         with r2:
-            form_driver = st.selectbox("DRIVER", [d for d, t in DRIVERS_2026])
-            form_team = st.selectbox("TEAM", VALID_TEAMS_2026)
-            form_weather = st.selectbox("WEATHER", ["Dry", "Mixed", "Wet"])
+            form_driver  = st.selectbox("DRIVER", [d for d,t in DRIVERS_2026])
+            form_team    = st.selectbox("TEAM", VALID_TEAMS_2026)
+            form_weather = st.selectbox("WEATHER", ["Dry","Mixed","Wet"])
         with r3:
-            form_qual = st.number_input("QUALIFYING POSITION", min_value=1, max_value=20, value=1)
-            form_finish = st.number_input("FINISH POSITION", min_value=1, max_value=20, value=1)
-            form_strategy = st.selectbox("TIRE STRATEGY", ["1-Stop", "2-Stop", "3-Stop"])
-        
+            form_qual    = st.number_input("QUALIFYING POSITION", min_value=1, max_value=22, value=1)
+            form_finish  = st.number_input("FINISH POSITION", min_value=1, max_value=22, value=1)
+            form_strat   = st.selectbox("TIRE STRATEGY", ["1-Stop","2-Stop","3-Stop"])
         r4, r5 = st.columns(2)
         with r4:
-            form_pits = st.number_input("PIT STOPS", min_value=0, max_value=5, value=2)
+            form_pits      = st.number_input("PIT STOPS", min_value=0, max_value=5, value=2)
             form_incidents = st.number_input("INCIDENTS (0/1)", min_value=0, max_value=1, value=0)
         with r5:
             form_penalties = st.number_input("PENALTIES (0/1)", min_value=0, max_value=1, value=0)
-            auto_retrain = st.checkbox("Auto-retrain models after insert", value=False)
-        
-        if st.button("➕  SUBMIT RACE RESULT"):
-            data = {
-                "season": form_season, "round": form_round,
-                "circuit": form_circuit, "driver": form_driver, "team": form_team,
-                "qualifying_position": form_qual, "finish_position": form_finish,
-                "weather": form_weather, "tire_strategy": form_strategy,
-                "pit_stops": form_pits, "incidents": form_incidents, "penalties": form_penalties,
-            }
-            result = ingest_single_result(data, auto_retrain=auto_retrain)
-            if result["success"]:
-                st.markdown(f'<div class="success-banner">✅ {result["message"]} | Dataset now has {result["rows"]} rows</div>', unsafe_allow_html=True)
-                if auto_retrain:
-                    st.markdown('<div class="success-banner">🔄 Models retrained successfully</div>', unsafe_allow_html=True)
+            man_retrain    = st.checkbox("Auto-retrain after insert", value=False)
+
+        if st.button("➕  SUBMIT ENTRY"):
+            data = {"season":form_season,"round":form_round,"circuit":form_circuit,
+                    "driver":form_driver,"team":form_team,"qualifying_position":form_qual,
+                    "finish_position":form_finish,"weather":form_weather,
+                    "tire_strategy":form_strat,"pit_stops":form_pits,
+                    "incidents":form_incidents,"penalties":form_penalties}
+            res = ingest_single_result(data, auto_retrain=man_retrain)
+            if res["success"]:
+                st.markdown(f'<div class="success-banner">✅ {res["message"]} | Total rows: {res["rows"]}</div>', unsafe_allow_html=True)
                 st.cache_data.clear()
             else:
-                for err in result["errors"]:
+                for err in res["errors"]:
                     st.markdown(f'<div class="error-banner">❌ {err}</div>', unsafe_allow_html=True)
-    
-    with tab_csv:
-        st.markdown('<div class="section-title">Bulk CSV Upload</div>', unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="explanation-box">
-        <strong>Expected columns:</strong> season, circuit, driver, team, qualifying_position, finish_position<br>
-        <strong>Optional:</strong> round, weather, tire_strategy, pit_stops, incidents, penalties, points<br>
-        The system auto-cleans messy data, normalizes column names, and handles missing values.
-        </div>
-        """, unsafe_allow_html=True)
-        
-        uploaded_file = st.file_uploader("UPLOAD CSV FILE", type=["csv"])
-        csv_retrain = st.checkbox("Auto-retrain models after upload", value=False)
-        
-        if uploaded_file and st.button("📤  INGEST CSV"):
-            import tempfile
-            with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
-                tmp.write(uploaded_file.getvalue())
-                tmp_path = tmp.name
-            
-            result = ingest_race_csv(tmp_path, auto_retrain=csv_retrain)
-            if result["success"]:
-                st.markdown(f'<div class="success-banner">✅ {result["message"]} | Total rows: {result["total_rows"]}</div>', unsafe_allow_html=True)
-                st.cache_data.clear()
-            else:
-                for err in result.get("errors", []):
-                    st.markdown(f'<div class="error-banner">❌ {err}</div>', unsafe_allow_html=True)
-        
-        # Current dataset preview
-        df_curr = load_data()
-        if not df_curr.empty:
-            st.markdown('<div class="section-title">Current Dataset</div>', unsafe_allow_html=True)
-            st.markdown(f'<div style="color:#888899;font-size:0.8rem;margin-bottom:8px;">{len(df_curr)} rows | {df_curr["season"].nunique()} seasons | {df_curr["driver"].nunique()} drivers</div>', unsafe_allow_html=True)
-            st.dataframe(df_curr.tail(20), use_container_width=True)
+
+    # ── DATASET PREVIEW ───────────────────────────────────────────
+    st.markdown("---")
+    st.markdown('<div class="section-title">📦 Current Dataset</div>', unsafe_allow_html=True)
+    df_curr = load_data()
+    if not df_curr.empty:
+        k1, k2, k3, k4 = st.columns(4)
+        for col, (lbl, val) in zip([k1,k2,k3,k4], [
+            ("TOTAL ROWS",    len(df_curr)),
+            ("SEASONS",       df_curr["season"].nunique()),
+            ("DRIVERS",       df_curr["driver"].nunique()),
+            ("2026 ROWS",     len(df_curr[df_curr["season"]==2026])),
+        ]):
+            with col:
+                st.markdown(f'<div class="metric-card" style="text-align:center;"><div class="metric-value" style="font-size:1.3rem;">{val}</div><div class="metric-label">{lbl}</div></div>', unsafe_allow_html=True)
+        st.dataframe(df_curr[df_curr["season"]==2026].sort_values(["round","finish_position"]) if len(df_curr[df_curr["season"]==2026]) > 0 else df_curr.tail(30), use_container_width=True)
+
+
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -995,24 +1683,27 @@ elif "DB" in nav:
         "📋 REGULATIONS", "🗓️ CALENDAR", "📝 INGEST LOG"
     ])
 
+    # ── DB STATUS ──
     with tab_db:
         if DB_LIVE:
             status = get_db_status()
             st.markdown('<div class="section-title">Database Tables</div>', unsafe_allow_html=True)
+
             metrics_data = [
-                ("DRIVERS",      status.get("drivers", 0)),
-                ("TEAMS",        status.get("teams", 0)),
-                ("CIRCUITS",     status.get("circuits", 0)),
-                ("RACES",        status.get("races_total", 0)),
-                ("RESULTS",      status.get("race_results", 0)),
+                ("DRIVERS",    status.get("drivers", 0)),
+                ("TEAMS",      status.get("teams", 0)),
+                ("CIRCUITS",   status.get("circuits", 0)),
+                ("RACES",      status.get("races_total", 0)),
+                ("RESULTS",    status.get("race_results", 0)),
                 ("EXPERT PREDS", status.get("expert_predictions", 0)),
-                ("REGULATIONS",  status.get("regulations", 0)),
-                ("LOGS",         status.get("ingestion_logs", 0)),
+                ("REGULATIONS",status.get("regulations", 0)),
+                ("LOGS",       status.get("ingestion_logs", 0)),
             ]
             cols = st.columns(4)
             for i, (lbl, val) in enumerate(metrics_data):
                 with cols[i % 4]:
                     st.markdown(f'<div class="metric-card" style="text-align:center;"><div class="metric-value" style="font-size:1.3rem;">{val}</div><div class="metric-label">{lbl}</div></div>', unsafe_allow_html=True)
+
             st.markdown(f"""
             <div class="explanation-box" style="margin-top:16px;">
             <strong style="color:#27F4D2;">🟢 Live Database Connected</strong><br>
@@ -1021,13 +1712,14 @@ elif "DB" in nav:
             </div>
             """, unsafe_allow_html=True)
         else:
-            st.warning("⚠️ Database offline. Run: python ingestion\\run_ingestion.py --setup")
+            st.warning("⚠️ Database offline — running in CSV mode. Run `python ingestion\\run_ingestion.py --setup` to initialize.")
 
+    # ── CPI RANKINGS ──
     with tab_cpi:
         st.markdown('<div class="section-title">Combined Performance Index — 2026 Rankings</div>', unsafe_allow_html=True)
         st.markdown("""
         <div class="explanation-box">
-        The <strong>Combined Performance Index (CPI)</strong> merges 7 signals into one master score:<br>
+        The <strong>Combined Performance Index (CPI)</strong> merges 7 data signals into one master score:<br>
         Circuit history (25%) · Recent form (25%) · Expert confidence (15%) · Regulation benefit (15%) · H2H stats (10%) · Team trajectory (10%)
         </div>
         """, unsafe_allow_html=True)
@@ -1036,9 +1728,11 @@ elif "DB" in nav:
             cpi_df = get_driver_cpi_ranking(2026)
         else:
             df_tmp = load_data()
-            cpi_df = df_tmp[df_tmp["season"]==2026].sort_values("combined_performance_index", ascending=False).drop_duplicates("driver") if not df_tmp.empty and "combined_performance_index" in df_tmp.columns else pd.DataFrame()
+            df_tmp = df_tmp[df_tmp["season"]==2026] if not df_tmp.empty else pd.DataFrame()
+            cpi_df = df_tmp.sort_values("combined_performance_index", ascending=False).drop_duplicates("driver") if not df_tmp.empty and "combined_performance_index" in df_tmp.columns else pd.DataFrame()
 
         if not cpi_df.empty:
+            from src.utils import TEAM_COLORS
             for i, row in cpi_df.iterrows():
                 color = TEAM_COLORS.get(row.get("team",""), "#888888")
                 cpi   = row.get("combined_performance_index", 0)
@@ -1046,6 +1740,7 @@ elif "DB" in nav:
                 reg   = row.get("reg_combined_impact", 0.5)
                 form  = row.get("driver_form_momentum_score", 0.5)
                 bar_w = int(cpi * 100)
+
                 st.markdown(f"""
                 <div class="metric-card" style="padding:12px 16px;margin:4px 0;">
                   <div style="display:flex;align-items:center;gap:12px;">
@@ -1064,9 +1759,14 @@ elif "DB" in nav:
                 </div>
                 """, unsafe_allow_html=True)
 
+    # ── EXPERT INSIGHTS ──
     with tab_expert:
         st.markdown('<div class="section-title">Expert Analyst Predictions</div>', unsafe_allow_html=True)
-        exp_df = get_expert_predictions() if DB_LIVE else pd.DataFrame()
+
+        if DB_LIVE:
+            exp_df = get_expert_predictions()
+        else:
+            exp_df = pd.DataFrame()
 
         if not exp_df.empty:
             for _, row in exp_df.iterrows():
@@ -1074,103 +1774,157 @@ elif "DB" in nav:
                 conf = float(row.get("confidence", 0.5))
                 sent_color = "#27F4D2" if sent=="positive" else "#FF4466" if sent=="negative" else "#888899"
                 sent_icon  = "😊" if sent=="positive" else "😟" if sent=="negative" else "😐"
+                driver = row.get("driver","Unknown")
+                color  = "#E8E8F0"
+
                 st.markdown(f"""
                 <div class="explanation-box" style="margin:6px 0;">
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-                    <div style="font-family:Orbitron,monospace;font-size:0.85rem;color:#E8E8F0;">{sent_icon} {row.get('driver','')}</div>
-                    <div style="font-size:0.7rem;color:#888899;"><span style="color:{sent_color}">{sent.upper()}</span> · conf:{conf:.2f} · {row.get('source','')}</div>
+                    <div style="font-family:Orbitron,monospace;font-size:0.85rem;color:{color};">
+                      {sent_icon} {driver}
+                    </div>
+                    <div style="font-size:0.7rem;color:#888899;">
+                      {sent_color and f'<span style="color:{sent_color}">{sent.upper()}</span>'} · conf: {conf:.2f} · {row.get('source','')}
+                    </div>
                   </div>
-                  <div style="font-size:0.82rem;color:#BBBBCC;"><em>"{row.get('raw_text','')[:150]}..."</em></div>
-                  <div style="font-size:0.78rem;color:#27F4D2;margin-top:6px;">→ {row.get('prediction','')}</div>
+                  <div style="font-size:0.82rem;color:#BBBBCC;line-height:1.5;">
+                    <em>"{row.get('raw_text','')[:150]}..."</em>
+                  </div>
+                  <div style="font-size:0.78rem;color:#27F4D2;margin-top:6px;">
+                    → {row.get('prediction','')}
+                  </div>
                 </div>
                 """, unsafe_allow_html=True)
 
-        st.markdown('<div class="section-title">➕ Add Expert Insight</div>', unsafe_allow_html=True)
-        new_text    = st.text_area("PASTE EXPERT QUOTE", height=100, key="new_expert_text")
-        new_source  = st.text_input("SOURCE", placeholder="Sky Sports, The Race...", key="new_expert_source")
-        new_weekend = st.selectbox("RACE WEEKEND", ["—"] + CIRCUITS_2026, key="new_expert_weekend")
-        if st.button("🧠  EXTRACT & SAVE"):
-            if new_text:
-                try:
-                    from ingestion.scrapers.expert_ingester import ExpertIngester
-                    ingester = ExpertIngester()
-                    result = ingester.ingest_text(new_text, source=new_source or "Manual",
-                                                   race_weekend=new_weekend if new_weekend != "—" else None)
-                    if result.get("success"):
-                        ext = result["extracted"]
-                        st.markdown(f'<div class="success-banner">✅ Extracted: {ext["driver_name"]} | {ext["sentiment"]} | conf={ext["confidence_score"]:.2f}</div>', unsafe_allow_html=True)
-                        st.cache_data.clear()
-                    else:
-                        st.error(f"Failed: {result.get('error','')}")
-                except Exception as e:
-                    st.error(f"Error: {e}")
+            # Add new insight form
+            st.markdown('<div class="section-title">➕ Add Expert Insight</div>', unsafe_allow_html=True)
+            new_text   = st.text_area("PASTE EXPERT QUOTE OR ARTICLE SNIPPET", height=100, key="new_expert_text")
+            new_source = st.text_input("SOURCE", placeholder="Sky Sports, The Race, Twitter...", key="new_expert_source")
+            new_weekend = st.selectbox("RACE WEEKEND", ["—"] + CIRCUITS_2026, key="new_expert_weekend")
 
+            if st.button("🧠  EXTRACT & SAVE INSIGHT"):
+                if new_text:
+                    try:
+                        from ingestion.scrapers.expert_ingester import ExpertIngester
+                        ingester = ExpertIngester()
+                        result = ingester.ingest_text(
+                            new_text, source=new_source or "Manual",
+                            race_weekend=new_weekend if new_weekend != "—" else None
+                        )
+                        if result.get("success"):
+                            ext = result["extracted"]
+                            st.markdown(f"""
+                            <div class="success-banner">
+                            ✅ Extracted: {ext['driver_name']} | {ext['sentiment']} | conf={ext['confidence_score']:.2f}
+                            </div>
+                            """, unsafe_allow_html=True)
+                            st.cache_data.clear()
+                        else:
+                            st.error(f"Failed: {result.get('error','')}")
+                    except Exception as e:
+                        st.error(f"Error: {e}")
+        else:
+            st.info("No expert predictions in DB yet. Use the form below to add some.")
+
+    # ── REGULATIONS ──
     with tab_regs:
         st.markdown('<div class="section-title">2026 Formula 1 Regulations</div>', unsafe_allow_html=True)
-        regs_df = get_regulations(2026) if DB_LIVE else pd.DataFrame()
+
+        if DB_LIVE:
+            regs_df = get_regulations(2026)
+        else:
+            regs_df = pd.DataFrame()
+
         if not regs_df.empty:
-            cat_colors = {"power_unit":"#3671C6","aerodynamics":"#E8002D","tires":"#FF8000","chassis":"#229971","entries":"#27F4D2","format":"#FF87BC"}
+            cat_colors = {
+                "power_unit": "#3671C6", "aerodynamics": "#E8002D",
+                "tires": "#FF8000", "chassis": "#229971",
+                "entries": "#27F4D2", "format": "#FF87BC",
+            }
             for _, reg in regs_df.iterrows():
-                color  = cat_colors.get(reg.get("category",""), "#888888")
-                impact = float(reg.get("impact_score", 0.5))
-                bar_w  = int(impact * 100)
+                color    = cat_colors.get(reg.get("category",""), "#888888")
+                impact   = float(reg.get("impact_score", 0.5))
+                bar_w    = int(impact * 100)
+
                 st.markdown(f"""
                 <div class="metric-card" style="margin:8px 0;padding:16px;">
                   <div style="display:flex;justify-content:space-between;align-items:flex-start;">
                     <div style="flex:1;">
-                      <div style="margin-bottom:6px;">
-                        <span style="background:{color}22;color:{color};border:1px solid {color}44;padding:2px 8px;border-radius:12px;font-size:0.65rem;font-family:Orbitron,monospace;">{reg.get('category','').upper().replace('_',' ')}</span>
-                        <span style="font-size:0.7rem;color:#888899;margin-left:8px;">{reg.get('rule_id','')}</span>
+                      <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;">
+                        <span style="background:{color}22;color:{color};border:1px solid {color}44;
+                                     padding:2px 8px;border-radius:12px;font-size:0.65rem;
+                                     font-family:Orbitron,monospace;letter-spacing:1px;">
+                          {reg.get('category','').upper().replace('_',' ')}
+                        </span>
+                        <span style="font-size:0.7rem;color:#888899;">{reg.get('rule_id','')}</span>
                       </div>
-                      <div style="font-size:0.85rem;color:#E8E8F0;margin-bottom:6px;">{reg.get('description','')[:120]}...</div>
-                      <div style="font-size:0.75rem;color:#888899;">🏁 {reg.get('race_impact','')[:80]}</div>
+                      <div style="font-family:Inter,sans-serif;font-size:0.85rem;color:#E8E8F0;margin-bottom:6px;">
+                        {reg.get('description','')[:120]}...
+                      </div>
+                      <div style="font-size:0.75rem;color:#888899;">
+                        🏁 {reg.get('race_impact','')[:80]}
+                      </div>
                     </div>
                     <div style="text-align:right;min-width:80px;padding-left:12px;">
                       <div style="font-family:Orbitron,monospace;color:#FFD700;font-size:1.1rem;">{impact:.2f}</div>
-                      <div style="font-size:0.6rem;color:#888899;">IMPACT</div>
+                      <div style="font-size:0.6rem;color:#888899;letter-spacing:1px;">IMPACT</div>
                       <div style="height:3px;width:{bar_w}%;background:{color};border-radius:2px;margin-top:4px;margin-left:auto;"></div>
                     </div>
                   </div>
                 </div>
                 """, unsafe_allow_html=True)
 
+    # ── CALENDAR ──
     with tab_cal:
         st.markdown('<div class="section-title">2026 Race Calendar</div>', unsafe_allow_html=True)
-        cal_df = get_season_race_calendar(2026) if DB_LIVE else pd.DataFrame()
+
+        if DB_LIVE:
+            cal_df = get_season_race_calendar(2026)
+        else:
+            cal_df = pd.DataFrame()
+
         if not cal_df.empty:
             for _, race in cal_df.iterrows():
                 status = race.get("status","scheduled")
-                icon   = "✅" if status=="completed" else "🔜"
+                icon   = "✅" if status=="completed" else "🔜" if status=="scheduled" else "⏳"
                 color  = "#27F4D2" if status=="completed" else "#888899"
+                sprint = race.get("sprint","—")
+
                 st.markdown(f"""
                 <div class="metric-card" style="padding:10px 16px;margin:3px 0;display:flex;align-items:center;gap:12px;">
                   <div style="font-family:Orbitron,monospace;font-size:0.85rem;color:#FFD700;width:30px;">R{race.get('round','')}</div>
-                  <div style="flex:1;"><span style="font-size:0.85rem;color:{color};">{race.get('race_name','')}</span>
-                  <span style="font-size:0.7rem;color:#888899;margin-left:8px;">{race.get('date','')}</span></div>
-                  <div style="font-size:0.75rem;color:#888899;">{race.get('sprint','—')} Sprint</div>
-                  <div>{icon}</div>
+                  <div style="flex:1;">
+                    <span style="font-size:0.85rem;color:{color};">{race.get('race_name','')}</span>
+                    <span style="font-size:0.7rem;color:#888899;margin-left:8px;">{race.get('date','')}</span>
+                  </div>
+                  <div style="font-size:0.75rem;color:#888899;">{sprint} Sprint</div>
+                  <div style="font-size:0.85rem;">{icon}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
+    # ── INGESTION LOG ──
     with tab_log:
         st.markdown('<div class="section-title">Recent Ingestion Activity</div>', unsafe_allow_html=True)
+
         if DB_LIVE:
             log_df = get_recent_ingestion_log(20)
             if not log_df.empty:
                 for _, log in log_df.iterrows():
                     icon = "✅" if log.get("status")=="success" else "❌"
                     st.markdown(f"""
-                    <div style="font-size:0.8rem;color:#E8E8F0;padding:6px 0;border-bottom:1px solid #1A1A25;display:flex;gap:12px;">
+                    <div style="font-family:Inter,sans-serif;font-size:0.8rem;color:#E8E8F0;
+                                padding:6px 0;border-bottom:1px solid #1A1A25;display:flex;gap:12px;">
                       <span>{icon}</span>
                       <span style="color:#888899;min-width:130px;">{log.get('timestamp','')}</span>
                       <span style="min-width:100px;">{log.get('type','')}</span>
-                      <span style="color:#27F4D2;">+{log.get('inserted',0)}</span>
+                      <span style="color:#27F4D2;">+{log.get('inserted',0)} rows</span>
                       <span style="color:#888899;">{log.get('source','')}</span>
                       <span style="color:#888899;margin-left:auto;">{log.get('duration','')}</span>
                     </div>
                     """, unsafe_allow_html=True)
         else:
-            st.info("Database not connected.")
+            st.info("Database not connected. Run `python ingestion\\run_ingestion.py --setup`")
+
 
 # ═══════════════════════════════════════════════════════════════════
 # PAGE: MODEL MANAGEMENT

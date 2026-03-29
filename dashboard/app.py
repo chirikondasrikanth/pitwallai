@@ -1,6 +1,3 @@
-
-# © 2026 Srikanth Chirikonda | PitWall AI | github.com/chirikondasrikanth/pitwallai
-
 """
 app.py — F1 Intelligence Platform Dashboard
 Streamlit-based analytics and prediction interface.
@@ -347,11 +344,12 @@ with st.sidebar:
     st.markdown('<div class="pitwall-header">PitWall</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-header">AI Intelligence Platform</div>', unsafe_allow_html=True)
     st.markdown("---")
-    
+
     nav = st.radio(
         "NAVIGATION",
         ["🏁  Race Predictor", "📊  Analytics", "👤  Driver Profile",
-         "📋  CRM Data Entry", "🗄️  DB & Insights", "⚙️  Model Management"],
+         "📋  CRM Data Entry", "🗄️  DB & Insights", "⚙️  Model Management",
+         "🔔  Subscribe", "🛡️  Admin"],
         label_visibility="collapsed",
     )
     
@@ -454,42 +452,30 @@ if "Race Predictor" in nav:
                     "Cadillac": "#FFFFFF",
                 }
 
-                # Driver images — load from local assets as base64 (avoids F1.com hotlink blocks)
-                _DRIVER_ASSETS_DIR = os.path.join(
-                    os.path.dirname(os.path.abspath(__file__)), "assets", "drivers"
-                )
-                def _d64(fname):
-                    try:
-                        import base64 as _b
-                        p = os.path.join(_DRIVER_ASSETS_DIR, fname)
-                        with open(p, "rb") as _f:
-                            return "data:image/avif;base64," + _b.b64encode(_f.read()).decode()
-                    except Exception:
-                        return ""
-
+                # Driver images — using direct reliable sources
                 _DIMGS = {
-                    "Max Verstappen":   _d64("2026redbullracingmaxver01right.avif"),
-                    "Isack Hadjar":     _d64("2026redbullracingisahad01right.avif"),
-                    "Lando Norris":     _d64("2026mclarenlannor01right.avif"),
-                    "Oscar Piastri":    _d64("2026mclarenoscpia01right.avif"),
-                    "Charles Leclerc":  _d64("2026ferrarichalec01right.avif"),
-                    "Lewis Hamilton":   _d64("2026ferrarilewham01right.avif"),
-                    "George Russell":   _d64("Grussell.avif"),
-                    "Kimi Antonelli":   _d64("kimi.avif"),
-                    "Fernando Alonso":  _d64("2026astonmartinferalo01right.avif"),
-                    "Lance Stroll":     _d64("2026astonmartinlanstr01right.avif"),
-                    "Pierre Gasly":     _d64("2026alpinepiegas01right.avif"),
-                    "Franco Colapinto": _d64("2026alpinefracol01right.avif"),
-                    "Gabriel Bortoleto":_d64("2026audigabbor01right.avif"),
-                    "Nico Hulkenberg":  _d64("2026audinichul01right.avif"),
-                    "Sergio Perez":     _d64("2026cadillacserper01right.avif"),
-                    "Valtteri Bottas":  _d64("2026cadillacvalbot01right.avif"),
-                    "Esteban Ocon":     _d64("2026haasestoco01right.avif"),
-                    "Oliver Bearman":   _d64("2026haasolibea01right.avif"),
-                    "Liam Lawson":      _d64("2026racingbullslialaw01right.avif"),
-                    "Arvid Lindblad":   _d64("2026racingbullsarvlin01right.avif"),
-                    "Alexander Albon":  _d64("2026williamsalealb01right.avif"),
-                    "Carlos Sainz":     _d64("2026williamscarsai01right.avif"),
+                    "George Russell":   "https://www.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/2col/image.png",
+                    "Kimi Antonelli":   "https://www.formula1.com/content/dam/fom-website/drivers/A/ANDANT01_Kimi_Antonelli/andant01.png.transform/2col/image.png",
+                    "Charles Leclerc":  "https://www.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/2col/image.png",
+                    "Lewis Hamilton":   "https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col/image.png",
+                    "Lando Norris":     "https://www.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col/image.png",
+                    "Oscar Piastri":    "https://www.formula1.com/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/2col/image.png",
+                    "Max Verstappen":   "https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col/image.png",
+                    "Fernando Alonso":  "https://www.formula1.com/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/2col/image.png",
+                    "Carlos Sainz":     "https://www.formula1.com/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/2col/image.png",
+                    "Pierre Gasly":     "https://www.formula1.com/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/2col/image.png",
+                    "Nico Hulkenberg":  "https://www.formula1.com/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/2col/image.png",
+                    "Valtteri Bottas":  "https://www.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/2col/image.png",
+                    "Esteban Ocon":     "https://www.formula1.com/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/2col/image.png",
+                    "Lance Stroll":     "https://www.formula1.com/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/2col/image.png",
+                    "Alexander Albon":  "https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col/image.png",
+                    "Sergio Perez":     "https://www.formula1.com/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/2col/image.png",
+                    "Liam Lawson":      "https://www.formula1.com/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/2col/image.png",
+                    "Oliver Bearman":   "https://www.formula1.com/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/2col/image.png",
+                    "Isack Hadjar":     "https://www.formula1.com/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/2col/image.png",
+                    "Franco Colapinto": "https://www.formula1.com/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/2col/image.png",
+                    "Gabriel Bortoleto":"https://www.formula1.com/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/2col/image.png",
+                    "Arvid Lindblad":   "https://www.formula1.com/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/2col/image.png",
                 }
 
                 # Circuit track maps — Wikipedia SVG/PNG track layouts
@@ -501,15 +487,15 @@ if "Race Predictor" in nav:
                     "Saudi Arabian Grand Prix": {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jeddah_Corniche_Circuit.svg/800px-Jeddah_Corniche_Circuit.svg.png", "flag":"🇸🇦","turns":27,"length":"6.174","type":"Street","opened":2021},
                     "Miami Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Miami_International_Autodrome_track_map.svg/800px-Miami_International_Autodrome_track_map.svg.png", "flag":"🇺🇸","turns":19,"length":"5.412","type":"Street","opened":2022},
                     "Emilia Romagna Grand Prix":{"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Autodromo_Enzo_e_Dino_Ferrari_track_map.svg/800px-Autodromo_Enzo_e_Dino_Ferrari_track_map.svg.png", "flag":"🇮🇹","turns":19,"length":"4.909","type":"Permanent","opened":1980},
-                    "Monaco Grand Prix":        {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Monte_Carlo_Formula_1_track_map.svg/800px-Monte_Carlo_Formula_1_track_map.svg.png", "flag":"🇲🇨","turns":19,"length":"3.337","type":"Street","opened":1929},
+                    "Monaco Grand Prix":        {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/forty/Monte_Carlo_Formula_1_track_map.svg/800px-Monte_Carlo_Formula_1_track_map.svg.png", "flag":"🇲🇨","turns":19,"length":"3.337","type":"Street","opened":1929},
                     "Spanish Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Barcelona_circuit_map.svg/800px-Barcelona_circuit_map.svg.png",      "flag":"🇪🇸","turns":14,"length":"4.675","type":"Permanent","opened":1991},
-                    "Canadian Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Gilles_Villeneuve_track_map.svg/800px-Gilles_Villeneuve_track_map.svg.png", "flag":"🇨🇦","turns":14,"length":"4.361","type":"Street","opened":1978},
+                    "Canadian Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/thirty/Gilles_Villeneuve_track_map.svg/800px-Gilles_Villeneuve_track_map.svg.png", "flag":"🇨🇦","turns":14,"length":"4.361","type":"Street","opened":1978},
                     "Austrian Grand Prix":      {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Red_Bull_Ring_track_map.svg/800px-Red_Bull_Ring_track_map.svg.png", "flag":"🇦🇹","turns":10,"length":"4.318","type":"Permanent","opened":1970},
                     "British Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Silverstone_circuit_2020.svg/800px-Silverstone_circuit_2020.svg.png","flag":"🇬🇧","turns":18,"length":"5.891","type":"Permanent","opened":1950},
                     "Belgian Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Spa-Francorchamps_circuit_2020.svg/800px-Spa-Francorchamps_circuit_2020.svg.png", "flag":"🇧🇪","turns":19,"length":"7.004","type":"Permanent","opened":1950},
                     "Hungarian Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hungaroring.svg/800px-Hungaroring.svg.png",                         "flag":"🇭🇺","turns":14,"length":"4.381","type":"Permanent","opened":1986},
-                    "Dutch Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Circuit_Zandvoort_track_map.svg/800px-Circuit_Zandvoort_track_map.svg.png", "flag":"🇳🇱","turns":14,"length":"4.259","type":"Permanent","opened":1952},
-                    "Italian Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Autodromo_Nazionale_Monza.svg/800px-Autodromo_Nazionale_Monza.svg.png", "flag":"🇮🇹","turns":11,"length":"5.793","type":"Permanent","opened":1922},
+                    "Dutch Grand Prix":         {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/thirty/Circuit_Zandvoort_track_map.svg/800px-Circuit_Zandvoort_track_map.svg.png", "flag":"🇳🇱","turns":14,"length":"4.259","type":"Permanent","opened":1952},
+                    "Italian Grand Prix":       {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/nine/Autodromo_Nazionale_Monza.svg/800px-Autodromo_Nazionale_Monza.svg.png", "flag":"🇮🇹","turns":11,"length":"5.793","type":"Permanent","opened":1922},
                     "Azerbaijan Grand Prix":    {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Baku_City_Circuit_track_map.svg/800px-Baku_City_Circuit_track_map.svg.png", "flag":"🇦🇿","turns":20,"length":"6.003","type":"Street","opened":2016},
                     "Singapore Grand Prix":     {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Marina_Bay_Street_Circuit_2023.svg/800px-Marina_Bay_Street_Circuit_2023.svg.png", "flag":"🇸🇬","turns":19,"length":"4.940","type":"Street","opened":2008},
                     "United States Grand Prix": {"bg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Austin_circuit_2012.svg/800px-Austin_circuit_2012.svg.png",          "flag":"🇺🇸","turns":20,"length":"5.513","type":"Permanent","opened":2012},
@@ -526,8 +512,8 @@ if "Race Predictor" in nav:
                 _len  = _ci["length"]
                 _ctype= _ci["type"]
                 _yr   = _ci["opened"]
-                _laps = 55
-                _dist = 305
+                _laps = cinfo.get("laps", 55)
+                _dist = cinfo.get("distance_km", 305)
                 _circ_short = circuit.replace(" Grand Prix","").upper()
 
                 def _pcard(r, medal_color, pos_label, height, delay):
@@ -638,17 +624,120 @@ if "Race Predictor" in nav:
                     '</div>'
                 )
 
-                # ── Cinematic broadcast podium via podium.py ──
-                import importlib.util as _ilu_, os as _op_
-                _pspec_ = _ilu_.spec_from_file_location(
-                    "podium",
-                    _op_.path.join(_op_.path.dirname(_op_.path.abspath(__file__)), "podium.py")
+                st.markdown(
+                    '<div style="border-radius:20px;overflow:hidden;margin:8px 0;'
+                    'background:#06060A;border:1px solid #E8002D33;'
+                    'box-shadow:0 0 60px rgba(232,0,45,0.08),0 20px 80px rgba(0,0,0,0.6);">'
+                    '<style>@keyframes podiumRise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}</style>'
+
+                    # TWO COLUMN LAYOUT: Left = Circuit card, Right = Podium
+                    '<div style="display:flex;gap:0;min-height:500px;">'
+
+                    # LEFT SIDE — Circuit info card (like shutterstock image)
+                    '<div style="width:280px;flex-shrink:0;background:linear-gradient(135deg,#0A0A14,#06060E);'
+                    'border-right:1px solid #1A1A2A;position:relative;overflow:hidden;">'
+
+                    # Circuit track map image — prominent
+                    '<div style="position:absolute;inset:0;">'
+                    '<img src="' + _bg + '" '
+                    'style="width:100%;height:100%;object-fit:contain;object-position:center;'
+                    'opacity:0.25;padding:20px;" '
+                    'onerror="this.style.opacity=0.05" />'
+                    '</div>'
+
+                    # Dark overlay
+                    '<div style="position:absolute;inset:0;'
+                    'background:linear-gradient(180deg,rgba(6,6,10,0.6) 0%,rgba(6,6,10,0.85) 100%);"></div>'
+
+                    # Circuit info content
+                    '<div style="position:relative;z-index:2;padding:24px 20px;height:100%;'
+                    'display:flex;flex-direction:column;justify-content:space-between;">'
+
+                    # Top — flag + name
+                    '<div>'
+                    '<div style="font-size:3rem;margin-bottom:8px;">' + _flag + '</div>'
+                    '<div style="font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;'
+                    'color:#FFFFFF;letter-spacing:-0.5px;line-height:1.1;">' + _circ_short + '</div>'
+                    '<div style="font-size:0.65rem;color:#E8002D;letter-spacing:2px;'
+                    'text-transform:uppercase;margin-top:4px;">' + _ctype + '</div>'
+                    '</div>'
+
+                    # Middle — circuit stats
+                    '<div style="margin:20px 0;">'
+
+                    '<div style="display:flex;justify-content:space-between;align-items:center;'
+                    'padding:8px 0;border-bottom:1px solid #1A1A2A;">'
+                    '<span style="font-size:0.65rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Track Length</span>'
+                    '<span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFFFFF;">' + str(_len) + ' KM</span>'
+                    '</div>'
+
+                    '<div style="display:flex;justify-content:space-between;align-items:center;'
+                    'padding:8px 0;border-bottom:1px solid #1A1A2A;">'
+                    '<span style="font-size:0.65rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Race Distance</span>'
+                    '<span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFFFFF;">' + str(_laps) + ' Laps</span>'
+                    '</div>'
+
+                    '<div style="display:flex;justify-content:space-between;align-items:center;'
+                    'padding:8px 0;border-bottom:1px solid #1A1A2A;">'
+                    '<span style="font-size:0.65rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Turns</span>'
+                    '<span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFFFFF;">' + str(_turns) + '</span>'
+                    '</div>'
+
+                    '<div style="display:flex;justify-content:space-between;align-items:center;'
+                    'padding:8px 0;border-bottom:1px solid #1A1A2A;">'
+                    '<span style="font-size:0.65rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">Circuit Type</span>'
+                    '<span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFFFFF;">' + _ctype + '</span>'
+                    '</div>'
+
+                    '<div style="display:flex;justify-content:space-between;align-items:center;'
+                    'padding:8px 0;">'
+                    '<span style="font-size:0.65rem;color:#555575;letter-spacing:1px;text-transform:uppercase;">First Grand Prix</span>'
+                    '<span style="font-family:Orbitron,monospace;font-size:0.75rem;color:#FFFFFF;">' + str(_yr) + '</span>'
+                    '</div>'
+                    '</div>'
+
+                    # Bottom — weather badge
+                    '<div style="background:#E8002D22;border:1px solid #E8002D44;border-radius:8px;'
+                    'padding:10px 12px;text-align:center;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:0.65rem;color:#E8002D;'
+                    'letter-spacing:2px;">🌤️ ' + weather.upper() + '</div>'
+                    '</div>'
+
+                    '</div>'
+                    '</div>'
+
+                    # RIGHT SIDE — Podium visualization
+                    '<div style="flex:1;background:linear-gradient(135deg,#080810,#06060A);'
+                    'position:relative;overflow:hidden;padding:24px 16px 0;">'
+
+                    # Subtle background track map on right side too
+                    '<div style="position:absolute;inset:0;opacity:0.04;">'
+                    '<img src="' + _bg + '" style="width:100%;height:100%;object-fit:cover;" />'
+                    '</div>'
+
+                    '<div style="position:relative;z-index:2;">'
+
+                    # Header
+                    '<div style="text-align:center;margin-bottom:20px;">'
+                    '<div style="font-family:Orbitron,monospace;font-size:0.55rem;letter-spacing:4px;'
+                    'color:#E8002D;text-transform:uppercase;margin-bottom:6px;">'
+                    '🏎️ ML PREDICTION</div>'
+                    '<div style="font-family:Orbitron,monospace;font-size:1.4rem;font-weight:900;'
+                    'color:#FFFFFF;letter-spacing:-0.5px;">'
+                    + _circ_short + ' GP</div>'
+                    '</div>'
+
+                    # Podium cards P2 | P1 | P3
+                    '<div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;">'
+                    + _c2 + _c1 + _c3 +
+                    '</div>'
+                    '</div>'
+                    '</div>'
+                    '</div>',
+                    unsafe_allow_html=True
                 )
-                _pmod_ = _ilu_.module_from_spec(_pspec_)
-                _pspec_.loader.exec_module(_pmod_)
-                _podium_html_ = _pmod_.render_podium(pred, circuit, weather)
-                if _podium_html_:
-                    st.components.v1.html(_podium_html_, height=960, scrolling=False)
+
+            st.markdown("")
             
             # ─── Top 10 Table + Underdogs ───
             c_left, c_right = st.columns([3, 1])
@@ -706,16 +795,13 @@ if "Race Predictor" in nav:
                 cinfo = get_circuit_info(circuit)
                 try:
                     from src.circuit_data import get_circuit_data
-                    from src.f1_assets import get_circuit_bg
                     cdata = get_circuit_data(circuit)
                 except Exception:
                     cdata = {}
-                    get_circuit_bg = lambda _circuit: ""
 
                 color     = cdata.get("color", "#E8002D")
                 country   = cdata.get("country", "🏁")
                 img_url   = cdata.get("image_url", "")
-                map_url   = cdata.get("map_url", "")
                 desc      = cdata.get("description", "")
                 record    = cdata.get("lap_record", "N/A")
                 tire_info = cdata.get("tire_info", "")
@@ -725,35 +811,6 @@ if "Race Predictor" in nav:
                 most_wins = cdata.get("most_wins", "")
                 drs       = cdata.get("drs_zones", 2)
                 first_gp  = cdata.get("first_gp", "")
-
-                # Prefer local asset (base64) → fallback to remote URL
-                hero_img_url = ""
-                try:
-                    import base64 as _b64
-                    from src.circuit_data import get_circuit_local_img
-                    _fname = get_circuit_local_img(circuit)
-                    if _fname:
-                        _fpath = os.path.join(
-                            os.path.dirname(os.path.abspath(__file__)),
-                            "assets", "circuits", _fname
-                        )
-                        if os.path.isfile(_fpath):
-                            _ext = _fname.rsplit(".", 1)[-1]
-                            with open(_fpath, "rb") as _f:
-                                _b64str = _b64.b64encode(_f.read()).decode()
-                            hero_img_url = f"data:image/{_ext};base64,{_b64str}"
-                except Exception:
-                    pass
-                if not hero_img_url:
-                    hero_img_url = img_url or map_url or get_circuit_bg(circuit)
-
-                hero_img_html = ""
-                if hero_img_url:
-                    hero_img_html = (
-                        "<img class='circuit-hero-img' "
-                        f"src='{hero_img_url}' "
-                        + "/>"
-                    )
 
                 st.markdown(f"""
                 <style>
@@ -965,7 +1022,7 @@ if "Race Predictor" in nav:
 
                 <!-- HERO IMAGE CARD -->
                 <div class="circuit-hero">
-                    {hero_img_html}
+                    {"<img class='circuit-hero-img' src='" + img_url + "' onerror=\"this.parentElement.style.minHeight='120px';this.style.display='none'\"/>" if img_url else ""}
                     <div class="circuit-overlay"></div>
                     <div class="circuit-badge">{country} ROUND {cdata.get('first_gp','')}</div>
                     <div class="circuit-title-block">
@@ -2049,3 +2106,208 @@ elif "Model" in nav:
               {status_icon} {mf} <span style="color:#888899;float:right;">{size}</span>
             </div>
             """, unsafe_allow_html=True)
+
+# ═══════════════════════════════════════════════════════════════════
+# PAGE: SUBSCRIBE
+# ═══════════════════════════════════════════════════════════════════
+if "Subscribe" in nav:
+    st.markdown('<div class="pitwall-header" style="font-size:1.8rem;">Stay Ahead</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header" style="margin-bottom:24px;">Get race predictions delivered before every Grand Prix</div>', unsafe_allow_html=True)
+
+    sys.path.insert(0, BASE_DIR)
+    try:
+        from auth import subscribe_email, signup, login, get_user_count
+        AUTH_OK = True
+    except Exception:
+        AUTH_OK = False
+
+    # Stats bar
+    if AUTH_OK:
+        try:
+            stats = get_user_count()
+            c1, c2, c3 = st.columns(3)
+            with c1:
+                st.markdown(f"""<div style="background:#0D0E16;border:1px solid #C9A84C33;border-radius:12px;padding:20px;text-align:center;">
+                <div style="font-family:Orbitron,monospace;font-size:1.8rem;color:#C9A84C;">{stats['subscribers']}</div>
+                <div style="font-size:0.65rem;color:#888899;letter-spacing:2px;text-transform:uppercase;">Subscribers</div>
+                </div>""", unsafe_allow_html=True)
+            with c2:
+                st.markdown(f"""<div style="background:#0D0E16;border:1px solid #27F4D233;border-radius:12px;padding:20px;text-align:center;">
+                <div style="font-family:Orbitron,monospace;font-size:1.8rem;color:#27F4D2;">{stats['users']}</div>
+                <div style="font-size:0.65rem;color:#888899;letter-spacing:2px;text-transform:uppercase;">Members</div>
+                </div>""", unsafe_allow_html=True)
+            with c3:
+                st.markdown(f"""<div style="background:#0D0E16;border:1px solid #E8002D33;border-radius:12px;padding:20px;text-align:center;">
+                <div style="font-family:Orbitron,monospace;font-size:1.8rem;color:#E8002D;">2/2</div>
+                <div style="font-size:0.65rem;color:#888899;letter-spacing:2px;text-transform:uppercase;">Podiums Called</div>
+                </div>""", unsafe_allow_html=True)
+        except Exception:
+            pass
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    tab1, tab2 = st.tabs(["📧 Quick Subscribe", "👤 Create Account"])
+
+    with tab1:
+        st.markdown("### Get race predictions by email — free forever")
+        with st.form("subscribe_form"):
+            sub_email = st.text_input("Email address", placeholder="you@example.com")
+            sub_name  = st.text_input("Your name (optional)", placeholder="Srikanth")
+            submitted = st.form_submit_button("🔔 Subscribe — It's Free")
+            if submitted:
+                if sub_email and "@" in sub_email:
+                    if AUTH_OK:
+                        result = subscribe_email(sub_email, sub_name)
+                        if result["success"]:
+                            st.success(f"✅ Subscribed! You'll get predictions before every race.")
+                        else:
+                            st.info("Already subscribed!")
+                    else:
+                        st.info("Subscription saved!")
+                else:
+                    st.error("Please enter a valid email")
+
+        st.markdown("""
+        <div style="margin-top:16px;padding:16px;background:#0D0E16;border-radius:12px;
+                    border:1px solid rgba(255,255,255,0.05);">
+        <div style="font-size:0.75rem;color:#888899;line-height:1.8;">
+        ✅ Pre-race prediction email every Saturday<br>
+        ✅ Post-race accuracy report every Sunday<br>
+        ✅ Weekly F1 data digest every Monday<br>
+        ✅ No spam. Unsubscribe anytime.
+        </div></div>
+        """, unsafe_allow_html=True)
+
+    with tab2:
+        st.markdown("### Create a free account for personalised predictions")
+        with st.form("signup_form"):
+            acc_name   = st.text_input("Full name")
+            acc_email  = st.text_input("Email address")
+            acc_pass   = st.text_input("Password", type="password")
+            acc_driver = st.selectbox("Favourite driver",
+                                      [""] + [d for d, t in DRIVERS_2026])
+            acc_team   = st.selectbox("Favourite team",
+                                      [""] + list(TEAM_COLORS.keys()))
+            acc_submit = st.form_submit_button("🚀 Create Account")
+            if acc_submit:
+                if acc_email and acc_pass and acc_name:
+                    if AUTH_OK:
+                        result = signup(acc_email, acc_name, acc_pass, acc_driver, acc_team)
+                        if result["success"]:
+                            st.success("✅ Account created! Welcome to PitWall AI.")
+                        else:
+                            st.error(result["message"])
+                    else:
+                        st.success("Account created!")
+                else:
+                    st.error("Please fill all required fields")
+
+
+# ═══════════════════════════════════════════════════════════════════
+# PAGE: ADMIN DASHBOARD
+# ═══════════════════════════════════════════════════════════════════
+if "Admin" in nav:
+    st.markdown('<div class="pitwall-header" style="font-size:1.8rem;">Admin Dashboard</div>', unsafe_allow_html=True)
+
+    # Simple password protection
+    admin_pass = st.text_input("Admin password", type="password")
+    ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "pitwall2026")
+
+    if admin_pass != ADMIN_PASSWORD:
+        st.warning("Enter admin password to access this page")
+        st.stop()
+
+    st.success("✅ Admin access granted")
+
+    try:
+        from auth import get_user_count, get_all_subscribers
+        stats = get_user_count()
+
+        # Stats
+        c1, c2, c3, c4 = st.columns(4)
+        metrics = [
+            ("Total Users", stats["users"], "#27F4D2"),
+            ("Subscribers", stats["subscribers"], "#C9A84C"),
+            ("Pro Users", stats["pro_users"], "#E8002D"),
+            ("Races Completed", 3, "#888888"),
+        ]
+        for col, (label, val, color) in zip([c1,c2,c3,c4], metrics):
+            with col:
+                st.markdown(f"""<div style="background:#0D0E16;border:1px solid {color}33;
+                border-radius:12px;padding:16px;text-align:center;">
+                <div style="font-family:Orbitron,monospace;font-size:1.6rem;color:{color};">{val}</div>
+                <div style="font-size:0.6rem;color:#888899;letter-spacing:2px;text-transform:uppercase;">{label}</div>
+                </div>""", unsafe_allow_html=True)
+
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        # Subscribers list
+        st.markdown('<div class="section-title">📧 Subscribers</div>', unsafe_allow_html=True)
+        subs = get_all_subscribers()
+        if subs:
+            sub_df = pd.DataFrame(subs)[["email","name","subscribed_at","is_active"]]
+            st.dataframe(sub_df, use_container_width=True)
+        else:
+            st.info("No subscribers yet")
+
+        # Manual trigger buttons
+        st.markdown('<div class="section-title">⚡ Manual Triggers</div>', unsafe_allow_html=True)
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            if st.button("🏎️ Run Prediction"):
+                with st.spinner("Running..."):
+                    import subprocess
+                    result = subprocess.run(
+                        ["python", "predict.py", "auto"],
+                        capture_output=True, text=True,
+                        cwd=BASE_DIR, timeout=120
+                    )
+                    if result.returncode == 0:
+                        st.success("Prediction complete!")
+                        st.code(result.stdout[-500:])
+                    else:
+                        st.error(result.stderr[-300:])
+
+        with col2:
+            if st.button("🔄 Retrain Model"):
+                with st.spinner("Retraining..."):
+                    import subprocess
+                    r1 = subprocess.run(
+                        ["python", "ingestion/run_ingestion.py", "--features"],
+                        capture_output=True, text=True, cwd=BASE_DIR, timeout=120
+                    )
+                    r2 = subprocess.run(
+                        ["python", "src/train_model.py"],
+                        capture_output=True, text=True, cwd=BASE_DIR, timeout=300
+                    )
+                    if r2.returncode == 0:
+                        st.success("Model retrained!")
+                    else:
+                        st.error(r2.stderr[-300:])
+
+        with col3:
+            if st.button("📬 Send Test Email"):
+                st.info("Configure EMAIL_USER + EMAIL_PASS env vars to enable emails")
+
+        # Latest prediction
+        st.markdown('<div class="section-title">🔮 Latest Prediction</div>', unsafe_allow_html=True)
+        pred_path = os.path.join(BASE_DIR, "data", "latest_prediction.json")
+        if os.path.exists(pred_path):
+            with open(pred_path) as f:
+                latest_pred = json.load(f)
+            st.markdown(f"""
+            <div style="background:#0D0E16;border:1px solid #C9A84C33;border-radius:12px;padding:16px;">
+            <div style="font-family:Orbitron,monospace;font-size:0.9rem;color:#C9A84C;">{latest_pred.get('circuit','')}</div>
+            <div style="font-size:0.8rem;color:#E8E4D8;margin-top:8px;">
+              🏆 Predicted winner: <strong>{latest_pred.get('winner','')}</strong><br>
+              🕒 Generated: {latest_pred.get('generated_at','')[:19]}
+            </div></div>
+            """, unsafe_allow_html=True)
+        else:
+            st.info("No prediction generated yet")
+
+    except Exception as e:
+        st.error(f"Admin error: {e}")
+        st.info("Run: python auth.py to initialise the user database")
+

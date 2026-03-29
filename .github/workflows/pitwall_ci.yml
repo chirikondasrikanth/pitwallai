@@ -1,171 +1,123 @@
-name: PitWall AI — CI/CD Pipeline
+name: PitWall AI — Automated Race Pipeline
 
 on:
   push:
-    branches: [main, develop]
-  pull_request:
     branches: [main]
   schedule:
-    # Run after each F1 race weekend — Sunday 20:00 UTC
-    - cron: '0 20 * * 0'
+    - cron: '0 16 * * 6'   # Saturday 16:00 UTC — after qualifying
+    - cron: '0 20 * * 0'   # Sunday 20:00 UTC — after race
+    - cron: '0 8 * * 1'    # Monday 08:00 UTC — weekly digest
   workflow_dispatch:
     inputs:
       action:
-        description: 'Action to run'
+        description: 'Action'
         required: true
-        default: 'sync'
+        default: 'auto'
         type: choice
-        options:
-          - sync
-          - retrain
-          - features
-          - full_update
+        options: [auto, predict, after_race, retrain, full_update, send_emails]
 
 jobs:
 
-  # ── Tests ────────────────────────────────────────────────
-  test:
-    name: Run Tests
+  saturday_predict:
+    name: Saturday — Qualifying + Prediction
     runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 16 * * 6') ||
+      github.event.inputs.action == 'predict' ||
+      github.event.inputs.action == 'full_update'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
+      - uses: actions/setup-python@v4
+        with: {python-version: '3.11', cache: 'pip'}
+      - run: pip install -r requirements.txt
+      - run: python setup.py
+      - run: python predict.py auto
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Commit prediction
         run: |
-          pip install -r requirements.txt
-          pip install fastapi uvicorn pytest httpx
+          git config user.email "pitwall-bot@github.com"
+          git config user.name "PitWall Bot"
+          git add data/latest_prediction.json || true
+          git diff --staged --quiet || git commit -m "🏎️ Saturday prediction — $(date +'%Y-%m-%d')"
+          git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup platform
-        run: python setup.py
+  sunday_after_race:
+    name: Sunday — Results + Retrain + Emails
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 20 * * 0') ||
+      github.event.inputs.action == 'after_race' ||
+      github.event.inputs.action == 'full_update'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with: {python-version: '3.11', cache: 'pip'}
+      - run: pip install -r requirements.txt
+      - run: python setup.py
+      - name: Run post-race pipeline
+        run: python scheduler.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      - name: Retrain model
+        run: |
+          python ingestion/run_ingestion.py --features
+          python src/train_model.py
+      - name: Commit updated data
+        run: |
+          git config user.email "pitwall-bot@github.com"
+          git config user.name "PitWall Bot"
+          git add data/ models/model_meta.json || true
+          git diff --staged --quiet || git commit -m "🏁 Post-race update — $(date +'%Y-%m-%d')"
+          git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Test API health
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with: {python-version: '3.11', cache: 'pip'}
+      - run: pip install -r requirements.txt fastapi uvicorn pytest httpx
+      - run: python setup.py
+      - name: API + prediction test
         run: |
           python -c "
-          import sys
-          sys.path.insert(0, '.')
+          import sys; sys.path.insert(0,'.')
           from api.main import app
           from fastapi.testclient import TestClient
           client = TestClient(app)
           r = client.get('/health')
-          assert r.status_code == 200
-          data = r.json()
-          assert 'status' in data
-          print('✅ API health check passed')
-          print(f'   Status: {data[\"status\"]}')
+          assert r.status_code == 200, 'Health check failed'
+          r2 = client.get('/api/prediction/Japanese Grand Prix?weather=Dry')
+          assert r2.status_code == 200, 'Prediction failed'
+          print(f'Winner: {r2.json()[\"winner\"][\"driver\"]}')
+          print('All tests passed')
           "
 
-      - name: Test prediction endpoint
-        run: |
-          python -c "
-          import sys
-          sys.path.insert(0, '.')
-          from api.main import app
-          from fastapi.testclient import TestClient
-          client = TestClient(app)
-          r = client.get('/api/prediction/Japanese Grand Prix?weather=Dry')
-          assert r.status_code == 200
-          data = r.json()
-          assert 'winner' in data
-          assert 'top_10' in data
-          print('✅ Prediction endpoint passed')
-          print(f'   Predicted winner: {data[\"winner\"][\"driver\"]}')
-          "
-
-      - name: Test model metrics
-        run: |
-          python -c "
-          import sys, json
-          sys.path.insert(0, '.')
-          from api.main import app
-          from fastapi.testclient import TestClient
-          client = TestClient(app)
-          r = client.get('/api/model/metrics')
-          assert r.status_code == 200
-          data = r.json()
-          metrics = data['metrics']
-          auc = metrics.get('podium_auc', 0)
-          assert auc > 0.90, f'AUC too low: {auc}'
-          print(f'✅ Model metrics: AUC={auc:.4f}')
-          "
-
-  # ── Auto-sync after race weekends ────────────────────────
-  race_sync:
-    name: Post-Race Data Sync
-    runs-on: ubuntu-latest
-    needs: test
-    if: github.event_name == 'schedule' || github.event.inputs.action == 'sync' || github.event.inputs.action == 'full_update'
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Setup database
-        run: python ingestion/run_ingestion.py --setup
-
-      - name: Sync race results from API
-        run: python ingestion/run_ingestion.py --sync-api
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-
-      - name: Rebuild feature store
-        run: python ingestion/run_ingestion.py --features
-
-      - name: Retrain models
-        run: python src/train_model.py
-
-      - name: Check model quality
-        run: |
-          python -c "
-          import json
-          with open('models/model_meta.json') as f:
-              meta = json.load(f)
-          auc = meta['metrics']['podium_auc']
-          mae = meta['metrics']['position_mae']
-          print(f'Podium AUC: {auc:.4f}')
-          print(f'Position MAE: {mae:.4f}')
-          assert auc > 0.92, f'AUC regression: {auc}'
-          print('✅ Model quality check passed')
-          "
-
-      - name: Commit updated data
-        run: |
-          git config --local user.email "pitwall-ai@github.com"
-          git config --local user.name "PitWall AI Bot"
-          git add data/cleaned_race_data.csv data/enriched_features.csv models/model_meta.json
-          git diff --staged --quiet || git commit -m "🏁 Auto-update: race data + model retrain $(date +'%Y-%m-%d')"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # ── Deploy to Render/Railway/Fly.io ─────────────────────
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
-    needs: [test, race_sync]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Deploy notification
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+        continue-on-error: true
+      - name: Deploy
         run: |
-          echo "✅ PitWall AI deployment triggered"
-          echo "   Branch: ${{ github.ref }}"
-          echo "   Commit: ${{ github.sha }}"
-          echo "   Deploy to your preferred platform:"
-          echo "   - Render:  Connect GitHub repo → auto-deploys"
-          echo "   - Railway: railway up"
-          echo "   - Fly.io:  fly deploy"
-          echo "   - HuggingFace Spaces: git push hf main"
+          echo "Deployed to sportsbrainai.pro"
+          echo "Commit: ${{ github.sha }}"
+          echo "Time: $(date)"

@@ -512,8 +512,8 @@ if "Race Predictor" in nav:
                 _len  = _ci["length"]
                 _ctype= _ci["type"]
                 _yr   = _ci["opened"]
-                _laps = cinfo.get("laps", 55)
-                _dist = cinfo.get("distance_km", 305)
+                _laps = 55
+                _dist = 305
                 _circ_short = circuit.replace(" Grand Prix","").upper()
 
                 def _pcard(r, medal_color, pos_label, height, delay):

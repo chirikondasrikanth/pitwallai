@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "email": "srikanthchirikonda97@gmail.com",
+    "name": "srikanth",
+    "subscribed_at": "2026-03-29 02:36:14",
+    "is_active": 1,
+    "notify_prediction": 1,
+    "notify_results": 1,
+    "notify_weekly": 1
+  }
+]
